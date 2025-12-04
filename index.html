@@ -21,115 +21,101 @@
       --radius:14px;
       --card-bg:#ffffff;
       --card-shadow:rgba(0,0,0,0.1);
+      --maxw:1100px;
       font-family:Inter, Arial, sans-serif;
     }
+    /* Reset & layout */
+    *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 
-    /* NAV */
-    nav{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);border-bottom:1px solid #eee;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    nav .logo{height:36px}
-    nav .links{display:flex;gap:14px;flex-wrap:wrap}
-    nav .links a{text-decoration:none;color:var(--text);font-weight:600;font-size:0.9rem}
-    nav .cta{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;white-space:nowrap;font-size:0.9rem}
+    /* NAV — constrained container so links never touch edges */
+    nav{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);border-bottom:1px solid #eee}
+    .nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:16px}
+    .logo{height:42px;flex:0 0 auto}
+    .links{display:flex;gap:16px;align-items:center;flex:1;justify-content:center;flex-wrap:wrap}
+    .links a{text-decoration:none;color:var(--text);font-weight:600;font-size:0.95rem;padding:6px 8px;border-radius:8px}
+    .links a:hover{background:rgba(0,123,255,0.06);color:var(--accent)}
+    .cta{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700;white-space:nowrap}
 
-    @media(max-width:600px){
-      nav {
-  justify-content: center;
-  gap: 10px;
-  text-align: center;
-  padding: 10px clamp(16px, 4%, 40px); /* top/bottom 10px, left/right responsive */
-}
-
-      nav .links{justify-content:center}
+    /* responsive: reduce spacing and allow horizontal scroll if too many links */
+    @media(max-width:880px){
+      .nav-inner{padding:10px 16px}
+      .links{gap:10px}
+    }
+    @media(max-width:560px){
+      .links{justify-content:center;gap:8px}
+      .logo{height:34px}
     }
 
     /* HERO */
-    header.hero{margin-top:70px;position:relative;height:75vh;min-height:520px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;overflow:hidden}
+    header.hero{margin-top:72px;position:relative;height:70vh;min-height:420px;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;overflow:hidden}
     #hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-    .hero-inner{position:relative;z-index:10;max-width:900px;padding:0 10px}
-    h1{font-size:clamp(2.2rem,5vw,4rem);margin:0 0 10px 0;font-weight:800}
-    p.lead{font-size:clamp(1.1rem,2vw,1.4rem);color:var(--muted);max-width:700px;margin:0 auto}
-    .hero-btns{margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:700;font-size:0.9rem}
+    .hero-inner{position:relative;z-index:10;max-width:900px;padding:0 12px}
+    h1{font-size:clamp(1.9rem,4.8vw,3.6rem);margin:0 0 10px 0;font-weight:800}
+    p.lead{font-size:clamp(1rem,1.6vw,1.2rem);color:var(--muted);max-width:760px;margin:0 auto}
+    .hero-btns{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:0.95rem}
     .btn-primary{background:var(--accent);color:white}
-    .btn-outline{border:2px solid var(--accent);color:var(--accent)}
+    .btn-outline{border:2px solid var(--accent);color:var(--accent);background:transparent}
 
-    section{padding:70px 20px;max-width:1100px;margin:auto}
-    h2{font-size:2rem;margin-bottom:10px;font-weight:800;text-align:center}
-    p.sub{text-align:center;color:var(--muted);margin-bottom:40px}
+    section{padding:60px 20px;max-width:var(--maxw);margin:0 auto}
+    h2{font-size:1.8rem;margin-bottom:10px;font-weight:800;text-align:center}
+    p.sub{text-align:center;color:var(--muted);margin-bottom:36px}
 
     /* GRID */
     .grid{display:grid;gap:20px}
-    @media(min-width:750px){.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:899px){.grid.cols-2{grid-template-columns:1fr}}
 
-    /* UPGRADED CARDS */
-    .card{
-      padding:26px;
-      border-radius:var(--radius);
-      background:var(--card-bg);
-      border:1px solid #e7e7e7;
-      box-shadow:0 6px 16px var(--card-shadow);
-      transition:0.35s;
-      cursor:pointer;
-      position:relative;
-      overflow:hidden;
-    }
-    .card:hover{
-      transform:translateY(-6px) scale(1.02);
-      box-shadow:0 14px 30px rgba(0,0,0,0.12);
-    }
-    .card h3{margin-top:0;margin-bottom:10px;font-size:1.3rem}
-    .card p{color:var(--muted);margin:0;font-size:0.95rem}
+    /* Cards with icons and microcopy */
+    .card{padding:22px;border-radius:var(--radius);background:var(--card-bg);border:1px solid #eee;box-shadow:0 8px 22px var(--card-shadow);transition:0.35s;cursor:pointer;position:relative;overflow:hidden}
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.12)}
+    .card .kicker{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-light));color:white;font-weight:700;margin-bottom:10px}
+    .card h3{margin:6px 0 8px;font-size:1.25rem}
+    .card p{color:var(--muted);margin:0 0 12px}
+    .card .meta{font-size:13px;color:var(--muted)}
 
-    /* FLOATING SHAPE BEHIND CARD */
-    .card::before{
-      content:"";
-      position:absolute;
-      width:160px;
-      height:160px;
-      background:var(--accent-light);
-      opacity:0.18;
-      border-radius:50%;
-      top:-40px;
-      right:-40px;
-      transition:0.5s;
-    }
-    .card:hover::before{
-      transform:scale(1.4);
-      opacity:0.25;
-    }
+    /* decorative blob */
+    .card::before{content:"";position:absolute;width:140px;height:140px;background:var(--accent-light);opacity:0.12;border-radius:50%;top:-30px;right:-30px;transition:0.45s}
+    .card:hover::before{transform:scale(1.3);opacity:0.18}
 
     /* ADS */
-    .ad-wrap{margin:40px auto;display:flex;justify-content:center}
+    .ad-wrap{margin:34px auto;display:flex;justify-content:center}
 
     /* FOOTER */
-    footer{background:#f4f4f4;padding:40px 20px;margin-top:40px;border-top:1px solid #ddd}
-    .footer-grid{max-width:1100px;margin:auto;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:20px;text-align:center}
-    .footer-links a{margin:0 10px;color:var(--text);text-decoration:none;font-weight:600;font-size:0.9rem}
+    footer{background:#f7f7f7;padding:36px 20px;margin-top:40px;border-top:1px solid #eee}
+    .footer-grid{max-width:var(--maxw);margin:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .footer-links{display:flex;gap:12px;flex-wrap:wrap}
+    .footer-links a{color:var(--text);text-decoration:none;font-weight:600}
     .footer-logo{height:36px}
 
-    /* INTERACTIVE MATH BACKGROUND CANVAS */
-    .math-bg{
-      position:fixed;
-      top:0;left:0;
-      width:100vw;
-      height:100vh;
-      z-index:-2;
-      background:#ffffff;
+    /* small screens fix for footer/nav overflow */
+    @media(max-width:600px){
+      .nav-inner{padding:10px 14px}
+      .footer-grid{padding:8px}
+      .hero-inner{padding:0 12px}
     }
+
+    /* subtle accessibility focus */
+    a:focus{outline:3px solid rgba(0,123,255,0.18);outline-offset:3px}
   </style>
 </head>
 <body>
 
-<canvas id="math-bg" class="math-bg"></canvas>
-
 <!-- NAVIGATION -->
 <nav>
-  <img src="assets/logo_black.png" class="logo" alt="BGAA Logo" />
-  <div class="links">
-    <a href="https://bgaaonline.lovable.app/shop">Shop</a>
-    <a href="https://bgaaonline.lovable.app/cad-library">CAD Library</a>
-    <a href="https://bgaaonline.lovable.app/tutorials">Tutorials</a>
+  <div class="nav-inner">
+    <img src="assets/logo_black.png" class="logo" alt="BGAA Logo" />
+
+    <div class="links" role="navigation" aria-label="Main navigation">
+      <a href="https://bgaaonline.lovable.app/shop">Shop</a>
+      <a href="https://bgaaonline.lovable.app/cad-library">CAD Library</a>
+      <a href="https://bgaaonline.lovable.app/tutorials">Tutorials</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+
+    <a class="cta" href="https://bgaaonline.lovable.app" aria-label="Open BGAA platform">Open Platform</a>
   </div>
 </nav>
 
@@ -159,24 +145,32 @@
   <p class="sub">From electronics to machining — BGAA gives everyone the power to create.</p>
 
   <div class="grid cols-2">
-    <div class="card" onclick="location.href='https://bgaaonline.lovable.app/shop'">
+    <div class="card" onclick="location.href='https://bgaaonline.lovable.app/shop'" role="link" tabindex="0">
+      <span class="kicker">Shop</span>
       <h3>Engineering Hardware Shop</h3>
-      <p>Electronics, mechanical parts, materials, processors, robotics gear — all in one accessible marketplace.</p>
+      <p>Electronics, mechanical parts, materials, processors and robotics gear — curated for reliability with datasheets and CAD ready files.</p>
+      <div class="meta">Screws • Sensors • Motors • MCUs • Filaments</div>
     </div>
 
-    <div class="card" onclick="location.href='https://bgaaonline.lovable.app/cad-library'">
+    <div class="card" onclick="location.href='https://bgaaonline.lovable.app/cad-library'" role="link" tabindex="0">
+      <span class="kicker">CAD</span>
       <h3>CAD Library</h3>
-      <p>Download manufacturing-ready 3D models with interactive previews and specifications.</p>
+      <p>Manufacturing-ready STEP, STL and native CAD files with interactive previews and version history to keep your projects reproducible.</p>
+      <div class="meta">Assemblies • Parts • Drawings • Tolerances</div>
     </div>
 
-    <div class="card" onclick="location.href='https://bgaaonline.lovable.app/tutorials'">
+    <div class="card" onclick="location.href='https://bgaaonline.lovable.app/tutorials'" role="link" tabindex="0">
+      <span class="kicker">Learn</span>
       <h3>Video Tutorials</h3>
-      <p>Engineering lessons, project builds, material lists, and step-by-step guidance.</p>
+      <p>Step-by-step project builds, circuit walkthroughs and fabrication guides — each with materials lists and sourcing links.</p>
+      <div class="meta">Beginner • Intermediate • Advanced</div>
     </div>
 
-    <div class="card" onclick="location.href='https://bgaaonline.lovable.app/manufacturing'">
+    <div class="card" onclick="location.href='https://bgaaonline.lovable.app/manufacturing'" role="link" tabindex="0">
+      <span class="kicker">Make</span>
       <h3>Manufacturing Services</h3>
-      <p>3D Printing, CNC machining, molding, metal fabrication and more — production made simple.</p>
+      <p>On-demand 3D printing, CNC machining, sheet metal and finishing — quote, schedule and produce with simple uploads.</p>
+      <div class="meta">3D Print • CNC • Sheetmetal • Finishing</div>
     </div>
   </div>
 </section>
@@ -192,7 +186,13 @@
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<!-- FOOTER AD -->
+<!-- VALUE SECTION -->
+<section>
+  <h2>Creative Freedom, Powered by BGAA</h2>
+  <p class="sub">We believe tools should be accessible. Engineering shouldn't be limited by cost, location, or background.</p>
+</section>
+
+<!-- FOOTER AD & FOOTER -->
 <div class="ad-wrap">
   <ins class="adsbygoogle"
        style="display:block"
@@ -217,23 +217,96 @@
 </footer>
 
 <script>
-/* ------------ HERO PARTICLE ANIMATION ------------- */
-const hcanvas=document.getElementById('hero-canvas');
-const hctx=hcanvas.getContext('2d');
-function hs(){hcanvas.width=window.innerWidth;hcanvas.height=window.innerHeight*0.75;}hs();window.addEventListener('resize',hs);
-let hp=Array.from({length:70},()=>({x:Math.random()*hcanvas.width,y:Math.random()*hcanvas.height,vx:(Math.random()-.5)*0.6,vy:(Math.random()-.5)*0.6,r:1+Math.random()*2}));
-function heroAnim(){hctx.clearRect(0,0,hcanvas.width,hcanvas.height);hctx.fillStyle="rgba(0,0,0,0.65)";
-hp.forEach(p=>{hctx.beginPath();hctx.arc(p.x,p.y,p.r,0,Math.PI*2);hctx.fill();p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>hcanvas.width)p.vx*=-1;if(p.y<0||p.y>hcanvas.height)p.vy*=-1;});
-requestAnimationFrame(heroAnim);}heroAnim();
+/* ----------------- HERO MESH (MATLAB-ISH) ----------------- */
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let w,h,mouse={x:-9999,y:-9999};
+  function resize(){w=canvas.width=window.innerWidth;h=canvas.height=document.querySelector('.hero').offsetHeight;}resize();window.addEventListener('resize',resize);
 
-/* ------------ MATH BACKGROUND ANIMATION ------------- */
-const mcanvas=document.getElementById('math-bg');
-const mctx=mcanvas.getContext('2d');
-function ms(){mcanvas.width=window.innerWidth;mcanvas.height=window.innerHeight;}ms();window.addEventListener('resize',ms);
-let waveT=0;
-function mathAnim(){mctx.clearRect(0,0,mcanvas.width,mcanvas.height);
-for(let x=0;x<mcanvas.width;x+=16){let y=mcanvas.height/2+Math.sin(x*0.015+waveT)*28;mctx.fillStyle="rgba(0,0,0,0.06)";mctx.fillRect(x,y,3,3);}waveT+=0.05;
-requestAnimationFrame(mathAnim);}mathAnim();
+  // grid settings
+  const cols = 40; // increased for resolution on wide screens
+  const rows = 18;
+  const gapX = () => w/cols;
+  const gapY = () => h/rows;
+
+  function drawMesh(t){
+    ctx.clearRect(0,0,w,h);
+    // background
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(0,0,w,h);
+
+    // draw colourful mesh surface using sine waves — matlab-ish
+    for(let i=0;i<cols;i++){
+      for(let j=0;j<rows;j++){
+        const x = (i+0.5)*gapX();
+        const y = (j+0.5)*gapY();
+        // base wave field
+        const u = i/cols*Math.PI*4 + t*0.8;
+        const v = j/rows*Math.PI*2 + t*0.6;
+        // z is height; influenced by mouse proximity
+        const dx = x - mouse.x; const dy = y - mouse.y; const md = Math.sqrt(dx*dx+dy*dy);
+        const influence = Math.max(0, 1 - md/(Math.min(w,h)*0.45));
+        const z = Math.sin(u)*Math.cos(v)*16 * (0.8 + 0.6*influence);
+
+        // project to screen as color/brightness
+        const hue = (i/cols*220 + j/rows*40 + (z*6)) % 360;
+        const bright = 60 + (z*1.5);
+        ctx.fillStyle = `hsl(${hue},70%,${Math.max(30,Math.min(75,bright))}%)`;
+        // draw small rect representing mesh node
+        ctx.beginPath();
+        const size = 6 + (z*0.12 + influence*6);
+        ctx.ellipse(x, y - z, size, size*0.55, 0, 0, Math.PI*2);
+        ctx.fill();
+      }
+    }
+
+    // draw function notation at left and right
+    ctx.fillStyle = 'rgba(0,0,0,0.07)';
+    ctx.fillRect(8,8,160,72);
+    ctx.fillStyle = '#001f3f'; ctx.font='14px ui-sans-serif,Arial';
+    ctx.fillText('f(x,y)=sin(4x)·cos(2y)', 16,28);
+    ctx.fillText('z = f(x,y,t) + A·g(|mouse|)', 16,48);
+    ctx.fillText('grid: 40 × 18', 16,68);
+
+    ctx.fillStyle = 'rgba(0,0,0,0.06)';
+    ctx.fillRect(w-180,8,172,72);
+    ctx.fillStyle = '#001f3f';
+    ctx.fillText('u = 4π·x/cols + ωt', w-168,28);
+    ctx.fillText('v = 2π·y/rows + ωt', w-168,48);
+    ctx.fillText('A: mouse influence', w-168,68);
+  }
+
+  let t=0;
+  function loop(){ drawMesh(t); t+=0.015; requestAnimationFrame(loop); }
+  loop();
+
+  // interaction
+  window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY - document.querySelector('.hero').getBoundingClientRect().top; });
+  window.addEventListener('touchmove', e => { const touch = e.touches[0]; if(touch){ mouse.x = touch.clientX; mouse.y = touch.clientY - document.querySelector('.hero').getBoundingClientRect().top; }} , {passive:true});
+  window.addEventListener('mouseleave', ()=>{ mouse.x=-9999; mouse.y=-9999 });
+})();
+
+/* ----------------- SUBTLE MATH BACKGROUND (behind page) ----------------- */
+(function(){
+  const canvas = document.getElementById('math-bg');
+  const ctx = canvas.getContext('2d');
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}resize();window.addEventListener('resize',resize);
+  let t=0;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    // soft radial grid
+    ctx.globalCompositeOperation='source-over';
+    for(let i=0;i<40;i++){
+      const a = (i/40)*Math.PI*2 + t*0.03;
+      const x = canvas.width/2 + Math.cos(a)*(canvas.width*0.45);
+      const y = canvas.height/2 + Math.sin(a)*(canvas.height*0.45);
+      ctx.fillStyle = `rgba(6,120,255,${0.03 + 0.02*Math.sin(i*0.5+t)})`;
+      ctx.beginPath(); ctx.arc(x,y,2,0,Math.PI*2); ctx.fill();
+    }
+    t+=0.02; requestAnimationFrame(draw);
+  }
+  draw();
+})();
 </script>
 
 </body>
