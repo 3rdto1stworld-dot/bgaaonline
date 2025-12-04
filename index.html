@@ -483,6 +483,45 @@ darkToggle.onclick = () => {
 }); // END DOMContentLoaded
 </script>
 
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-bottom-nav">
+<a href="https://bgaaonline.lovable.app/shop"><span>🛒</span><small>Shop</small></a>
+<a href="https://bgaaonline.lovable.app/cad-library"><span>📐</span><small>CAD</small></a>
+<a href="https://bgaaonline.lovable.app/tutorials"><span>🎥</span><small>Tuts</small></a>
+<a href="https://bgaaonline.lovable.app"><span>🏠</span><small>Home</small></a>
+</nav>
 
+
+<style>
+.mobile-bottom-nav{
+position:fixed;
+bottom:0;left:0;
+width:100%;
+height:64px;
+background:#fff;
+border-top:1px solid #ddd;
+display:flex;
+justify-content:space-around;
+align-items:center;
+z-index:9999;
+}
+.mobile-bottom-nav a{
+flex:1;
+text-align:center;
+text-decoration:none;
+color:#000;
+font-size:0.75rem;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+.mobile-bottom-nav span{
+font-size:1.3rem;
+line-height:1;
+}
+@media(min-width:780px){
+.mobile-bottom-nav{display:none;}
+}
+</style>
 </body>
 </html>
