@@ -1,77 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021933921037296" crossorigin="anonymous"></script>
+
+  <!-- SEO -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BGAA Engineering • CAD tools • Tutorials • Manufacturing • Hardware Engineering" />
+  <meta name="keywords" content="engineering, CAD, manufacturing, tutorials, hardware store, BGAA" />
+  <meta name="author" content="BGAA Engineering" />
   <title>BGAA Engineering</title>
+
+  <!-- Styles -->
   <style>
     body {margin:0;font-family:Arial, sans-serif;background:#0a0a0a;color:white;overflow-x:hidden;}
-    header {padding:40px;text-align:center;position:relative;z-index:10;}
-    h1 {font-size:3rem;margin:0;}
-    p.subtitle {color:#ccc;font-size:1.2rem;}
-    .cta-btn {display:inline-block;margin-top:20px;padding:15px 35px;background:#ffb300;color:black;font-weight:bold;border-radius:8px;text-decoration:none;transition:0.3s;}    
+    h1,h2 {margin:0;padding:0;}
+
+    /* Preloader */
+    #preloader {position:fixed;top:0;left:0;width:100%;height:100%;background:#0a0a0a;display:flex;justify-content:center;align-items:center;z-index:1000;}
+    #preloader .dot {width:15px;height:15px;background:#ffb300;border-radius:50%;margin:0 5px;animation:bounce 0.6s infinite alternate;}    
+    @keyframes bounce {to {transform:translateY(-15px);} }
+
+    /* Floating Navbar */
+    nav {position:fixed;top:20px;left:50%;transform:translateX(-50%);background:rgba(20,20,20,0.85);padding:12px 30px;border-radius:10px;backdrop-filter:blur(8px);z-index:999;display:flex;gap:25px;}
+    nav a {color:#ffb300;font-weight:bold;text-decoration:none;transition:0.3s;}
+    nav a:hover {color:#ffd35c;}
+
+    /* Physics Hero */
+    #hero-canvas {position:absolute;top:0;left:0;width:100%;height:70vh;z-index:0;}
+    .hero {height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;text-align:center;z-index:10;}
+    h1 {font-size:3.2rem;}
+    p.subtitle {color:#ccc;font-size:1.25rem;margin-top:10px;}
+    .cta-btn {margin-top:25px;padding:15px 40px;background:#ffb300;color:black;font-weight:bold;border-radius:10px;text-decoration:none;transition:0.3s;}    
     .cta-btn:hover {background:#ffcc33;}
 
-    /* Physics hero section */
-    #hero-canvas {position:absolute;top:0;left:0;width:100%;height:60vh;z-index:0;}
-    .hero {height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;}
-
     /* Sections */
-    section {padding:80px 20px;max-width:900px;margin:auto;}
+    section {padding:80px 20px;max-width:1000px;margin:auto;}
     h2 {font-size:2rem;margin-bottom:20px;}
+    .services-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:40px;}
+    .card {background:#111;padding:25px;border-radius:12px;border:1px solid #222;transition:0.3s;}
+    .card:hover {transform:translateY(-5px);border-color:#ffb300;}
+
     footer {text-align:center;padding:40px;color:#666;}
   </style>
 </head>
 <body>
-  <canvas id="hero-canvas"></canvas>
 
-  <header class="hero">
-    <h1>BGAA Engineering</h1>
-    <p class="subtitle">Future‑Ready Engineering • CAD • Tutorials • Smart Manufacturing</p>
-    <a href="https://bgaaonline.lovable.app" class="cta-btn">Enter Full Platform</a>
-  </header>
+<!-- Preloader -->
+<div id="preloader">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>BGAA Engineering specializes in accessible engineering tools, CAD resources, automated workflows, and manufacturing‑ready solutions for creators and companies worldwide.</p>
-  </section>
+<!-- Navbar -->
+<nav>
+  <a href="https://bgaaonline.lovable.app/shop">Shop</a>
+  <a href="https://bgaaonline.lovable.app/tutorials">Tutorials</a>
+  <a href="https://bgaaonline.lovable.app/cad-library">CAD Library</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: support@bgaa.online</p>
-    <p>We respond within 24 hours.</p>
-  </section>
+<!-- Physics Canvas -->
+<canvas id="hero-canvas"></canvas>
 
-  <footer>© 2025 BGAA Engineering</footer>
+<header class="hero">
+  <h1>BGAA Engineering</h1>
+  <p class="subtitle">Future‑Ready Engineering • CAD • Tutorials • Smart Manufacturing</p>
+  <a href="https://bgaaonline.lovable.app" class="cta-btn">Enter Full Platform</a>
+</header>
+
+<section id="services">
+  <h2>Products & Hardware Services</h2>
+  <p>BGAA provides essential engineering hardware solutions and digital tools to power creators, manufacturers, and product developers.</p>
+
+  <div class="services-grid">
+    <div class="card"><h3>3D Printers & Parts</h3><p>Nozzles, belts, boards, rails & precision upgrades.</p></div>
+    <div class="card"><h3>Electronics & Microcontrollers</h3><p>Arduino, ESP32, sensors, ICs, and embedded accessories.</p></div>
+    <div class="card"><h3>Mechanical Components</h3><p>Bearings, pulleys, shafts, gears & metal profiles.</p></div>
+    <div class="card"><h3>CNC & Manufacturing</h3><p>Cutting tools, collets, spindle parts & workshop tooling.</p></div>
+    <div class="card"><h3>Prototyping Materials</h3><p>Sheets, filaments, resins, fasteners & adhesives.</p></div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>BGAA Engineering specializes in accessible engineering tools, CAD resources, automated workflows, hardware solutions, and manufacturing‑ready systems for individuals and companies worldwide.</p>
+</section>
+
+<section id="policies">
+  <h2>Policies</h2>
+  <p><strong>Privacy Policy:</strong> We do not sell or share your data. Traffic analytics are only used to improve services.</p>
+  <p><strong>Terms of Service:</strong> Using BGAA tools or platform indicates acceptance of fair‑use engineering policies.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: support@bgaa.online</p>
+  <p>We respond within 24 hours.</p>
+</section>
+
+<footer>© 2025 BGAA Engineering</footer>
 
 <script>
-// Simple physics-inspired floating particles
+// PRELOADER
+window.addEventListener("load", ()=>{
+  document.getElementById("preloader").style.display = "none";
+});
+
+// CANVAS PHYSICS
 const canvas = document.getElementById("hero-canvas");
 const ctx = canvas.getContext("2d");
 let w, h;
+function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight*0.7;}resize();window.onresize=resize;
 
-function resize(){w = canvas.width = window.innerWidth;h = canvas.height = window.innerHeight * 0.6;}resize();window.onresize = resize;
-
-let particles = Array.from({length: 80}, () => ({
-  x: Math.random()*w,
-  y: Math.random()*h,
-  vx: (Math.random()-0.5)*0.8,
-  vy: (Math.random()-0.5)*0.8,
-  r: Math.random()*3+1
+let particles = Array.from({length:120}, () => ({
+  x:Math.random()*w,
+  y:Math.random()*h,
+  vx:(Math.random()-0.5)*1,
+  vy:(Math.random()-0.5)*1,
+  r:Math.random()*3+1
 }));
+
+canvas.addEventListener("mousemove", e => {
+  particles.forEach(p=>{
+    let dx=p.x-e.clientX;let dy=p.y-e.clientY;
+    let dist=Math.sqrt(dx*dx+dy*dy);
+    if(dist<120){p.vx+=dx/2000;p.vy+=dy/2000;}
+  });
+});
 
 function animate(){
   ctx.clearRect(0,0,w,h);
-  particles.forEach(p => {
-    p.x += p.vx;
-    p.y += p.vy;
-    if(p.x<0||p.x>w) p.vx*=-1;
-    if(p.y<0||p.y>h) p.vy*=-1;
+  particles.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0||p.x>w)p.vx*=-1;
+    if(p.y<0||p.y>h)p.vy*=-1;
     ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle="rgba(255,179,0,0.8)";ctx.fill();
   });
   requestAnimationFrame(animate);
 }
 animate();
 </script>
+
 </body>
 </html>
