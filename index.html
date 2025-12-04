@@ -33,7 +33,13 @@
     nav .cta{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;white-space:nowrap;font-size:0.9rem}
 
     @media(max-width:600px){
-      nav{justify-content:center;gap:10px;text-align:center}
+      nav {
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 10px clamp(16px, 4%, 40px); /* top/bottom 10px, left/right responsive */
+}
+
       nav .links{justify-content:center}
     }
 
