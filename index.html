@@ -28,14 +28,106 @@
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 
-    /* NAV — constrained container so links never touch edges */
-    nav{position:fixed;top:0;left:0;width:100%;z-index:999;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);border-bottom:1px solid #eee}
-    .nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;gap:16px}
-    .logo{height:42px;flex:0 0 auto}
-    .links{display:flex;gap:16px;align-items:center;flex:1;justify-content:center;flex-wrap:wrap}
-    .links a{text-decoration:none;color:var(--text);font-weight:600;font-size:0.95rem;padding:6px 8px;border-radius:8px}
-    .links a:hover{background:rgba(0,123,255,0.06);color:var(--accent)}
-    .cta{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700;white-space:nowrap}
+    /* ---------------- NAVIGATION ---------------- */
+nav{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  z-index:999;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #eee;
+  transition:box-shadow 0.25s ease;
+}
+
+nav.scrolled{
+  box-shadow:0 4px 18px rgba(0,0,0,0.08);
+}
+
+.nav-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 22px;
+  gap:16px;
+}
+
+/* Brand */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  font-size:1.05rem;
+  cursor:pointer;
+}
+.brand img{height:40px}
+
+/* Desktop Links */
+.nav-links{
+  display:flex;
+  gap:22px;
+  align-items:center;
+}
+.nav-links a{
+  color:var(--text);
+  font-weight:600;
+  text-decoration:none;
+  font-size:0.95rem;
+  padding:6px 8px;
+  border-radius:8px;
+}
+.nav-links a:hover{
+  color:var(--accent);
+  background:rgba(0,123,255,0.06);
+}
+
+/* Mobile Toggle */
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+.nav-toggle span{
+  width:24px;
+  height:3px;
+  background:var(--text);
+  border-radius:4px;
+  transition:0.25s;
+}
+
+/* Mobile drawer */
+@media(max-width:780px){
+  .nav-toggle{display:flex;}
+  .nav-links{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:70%;
+    height:100vh;
+    background:#fff;
+    padding:90px 30px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:22px;
+    border-left:1px solid #eee;
+    transition:0.35s ease;
+    box-shadow:-6px 0 20px rgba(0,0,0,0.08);
+  }
+  .nav-links.open{
+    right:0;
+  }
+  .nav-links a{
+    font-size:1.1rem;
+    padding:10px 2px;
+  }
+  .brand img{height:34px}
+}
 
     /* responsive: reduce spacing and allow horizontal scroll if too many links */
     @media(max-width:880px){
@@ -104,19 +196,24 @@
 
 <!-- NAVIGATION -->
 <nav>
-    <div class="nav-inner">
-        <div class="brand">
-            <img src="assets/logo_black.png" alt="BGAA Logo">
-            <span>BGAA Engineering</span>
-        </div>
-
-        <div class="nav-links">
-            <a href="https://bgaaonline.lovable.app/shop">Shop</a>
-            <a href="https://bgaaonline.lovable.app/cad-library">CAD Library</a>
-            <a href="https://bgaaonline.lovable.app/tutorials">Tutorials</a>
-        </div>
+  <div class="nav-inner">
+    <div class="brand" onclick="location.href='/'">
+      <img src="assets/logo_black.png" alt="BGAA Logo">
+      <span>BGAA Engineering</span>
     </div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links">
+      <a href="https://bgaaonline.lovable.app/shop">Shop</a>
+      <a href="https://bgaaonline.lovable.app/cad-library">CAD Library</a>
+      <a href="https://bgaaonline.lovable.app/tutorials">Tutorials</a>
+    </div>
+  </div>
 </nav>
+
 
 <!-- HERO -->
 <header class="hero">
@@ -306,6 +403,28 @@
   }
   draw();
 })();
+
+/* Mobile Menu Toggle */
+const toggle = document.querySelector(".nav-toggle");
+const links = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+  links.classList.toggle("open");
+});
+
+/* Close on outside click */
+document.addEventListener("click", (e) => {
+  if (!toggle.contains(e.target) && !links.contains(e.target)) {
+    links.classList.remove("open");
+  }
+});
+
+/* Scroll shadow */
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 30) document.querySelector("nav").classList.add("scrolled");
+  else document.querySelector("nav").classList.remove("scrolled");
+});
+  
 </script>
 
 </body>
