@@ -422,30 +422,18 @@ darkToggle.onclick = () => {
 
         // project to screen as color/brightness
         const hue = (i/cols*220 + j/rows*40 + (z*6)) % 360;
-        const bright = 60 + (z*1.5);
-        ctx.fillStyle = `hsl(${hue},70%,${Math.max(30,Math.min(75,bright))}%)`;
+       const bright = 72 + (z*0.4);
+       ctx.fillStyle = `hsl(${hue},40%,${Math.max(55,Math.min(82,bright))}%)`;
         // draw small rect representing mesh node
         ctx.beginPath();
-        const size = 6 + (z*0.12 + influence*6);
+        const size = 3 + (z*0.05 + influence*2);
         ctx.ellipse(x, y - z, size, size*0.55, 0, 0, Math.PI*2);
         ctx.fill();
       }
     }
 
     // draw function notation at left and right
-    ctx.fillStyle = 'rgba(0,0,0,0.07)';
-    ctx.fillRect(8,8,160,72);
-    ctx.fillStyle = '#001f3f'; ctx.font='14px ui-sans-serif,Arial';
-    ctx.fillText('f(x,y)=sin(4x)·cos(2y)', 16,28);
-    ctx.fillText('z = f(x,y,t) + A·g(|mouse|)', 16,48);
-    ctx.fillText('grid: 40 × 18', 16,68);
-
-    ctx.fillStyle = 'rgba(0,0,0,0.06)';
-    ctx.fillRect(w-180,8,172,72);
-    ctx.fillStyle = '#001f3f';
-    ctx.fillText('u = 4π·x/cols + ωt', w-168,28);
-    ctx.fillText('v = 2π·y/rows + ωt', w-168,48);
-    ctx.fillText('A: mouse influence', w-168,68);
+   
   }
 
   let t=0;
