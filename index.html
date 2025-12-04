@@ -28,16 +28,16 @@
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 
-    /* ---------------- NAVIGATION ---------------- */
+/* ---------------- NAVIGATION ---------------- */
 nav{
   position:fixed;
   top:0; left:0;
   width:100%;
-  z-index:999;
-  background:rgba(255,255,255,0.9);
+  z-index:9999;
+  background:var(--nav-bg, rgba(255,255,255,0.9));
   backdrop-filter:blur(8px);
-  border-bottom:1px solid #eee;
-  transition:box-shadow 0.25s ease;
+  border-bottom:1px solid var(--border, #eee);
+  transition:box-shadow 0.25s ease, background 0.25s ease;
 }
 
 nav.scrolled{
@@ -54,7 +54,6 @@ nav.scrolled{
   gap:16px;
 }
 
-/* Brand */
 .brand{
   display:flex;
   align-items:center;
@@ -63,16 +62,17 @@ nav.scrolled{
   font-size:1.05rem;
   cursor:pointer;
 }
-.brand img{height:40px}
+.brand img{ height:40px; }
 
-/* Desktop Links */
+/* Links (Desktop) */
 .nav-links{
   display:flex;
   gap:22px;
   align-items:center;
 }
+
 .nav-links a{
-  color:var(--text);
+  color:var(--text, #333);
   font-weight:600;
   text-decoration:none;
   font-size:0.95rem;
@@ -80,11 +80,11 @@ nav.scrolled{
   border-radius:8px;
 }
 .nav-links a:hover{
-  color:var(--accent);
+  color:var(--accent, #0066ff);
   background:rgba(0,123,255,0.06);
 }
 
-/* Mobile Toggle */
+/* Hamburger */
 .nav-toggle{
   display:none;
   flex-direction:column;
@@ -92,16 +92,26 @@ nav.scrolled{
   background:none;
   border:none;
   cursor:pointer;
+  z-index:10001;
 }
 .nav-toggle span{
   width:24px;
   height:3px;
-  background:var(--text);
+  background:var(--text, #333);
   border-radius:4px;
   transition:0.25s;
 }
 
-/* Mobile drawer */
+/* Dark mode button */
+.dark-toggle{
+  background:none;
+  border:none;
+  font-size:1.3rem;
+  cursor:pointer;
+  margin-right:10px;
+}
+
+/* MOBILE */
 @media(max-width:780px){
   .nav-toggle{display:flex;}
   .nav-links{
@@ -110,24 +120,35 @@ nav.scrolled{
     right:-100%;
     width:70%;
     height:100vh;
-    background:#fff;
+    background:var(--nav-bg, #fff);
     padding:90px 30px;
     flex-direction:column;
     align-items:flex-start;
     gap:22px;
-    border-left:1px solid #eee;
+    border-left:1px solid var(--border, #eee);
     transition:0.35s ease;
     box-shadow:-6px 0 20px rgba(0,0,0,0.08);
+    z-index:10000;
   }
   .nav-links.open{
     right:0;
   }
+
   .nav-links a{
     font-size:1.1rem;
     padding:10px 2px;
   }
-  .brand img{height:34px}
 }
+
+/* DARK MODE COLORS */
+.dark{
+  --nav-bg: #111;
+  --text: #fff;
+  --border: #333;
+  background:#000;
+  color:#fff;
+}
+
 
     /* responsive: reduce spacing and allow horizontal scroll if too many links */
     @media(max-width:880px){
@@ -197,11 +218,15 @@ nav.scrolled{
 <!-- NAVIGATION -->
 <nav>
   <div class="nav-inner">
-    <div class="brand" onclick="location.href='/'">
-      <img src="assets/logo_black.png" alt="BGAA Logo">
+    <div class="brand">
+      <img id="logo" src="assets/logo_black.png" alt="BGAA Logo">
       <span>BGAA Engineering</span>
     </div>
 
+    <!-- DARK MODE TOGGLE -->
+    <button id="darkToggle" class="dark-toggle">🌙</button>
+
+    <!-- MOBILE HAMBURGER -->
     <button class="nav-toggle" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
@@ -313,6 +338,55 @@ nav.scrolled{
 </footer>
 
 <script>
+
+// Selectors
+const toggle = document.querySelector(".nav-toggle");
+const links = document.querySelector(".nav-links");
+const darkToggle = document.getElementById("darkToggle");
+const logo = document.getElementById("logo");
+
+// OPEN/CLOSE MOBILE MENU
+toggle.addEventListener("click", () => {
+  links.classList.toggle("open");
+});
+
+// Close menu when clicking outside
+document.addEventListener("click", (e) => {
+  if (!toggle.contains(e.target) && !links.contains(e.target)) {
+    links.classList.remove("open");
+  }
+});
+
+// Scroll shadow
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 30) document.querySelector("nav").classList.add("scrolled");
+  else document.querySelector("nav").classList.remove("scrolled");
+});
+
+// DARK MODE HANDLING
+function applyDarkMode(isDark){
+  if(isDark){
+    document.body.classList.add("dark");
+    logo.src = "assets/logo_white.png";     // WHITE LOGO
+    darkToggle.textContent = "☀️";
+  } else {
+    document.body.classList.remove("dark");
+    logo.src = "assets/logo_black.png";     // BLACK LOGO
+    darkToggle.textContent = "🌙";
+  }
+}
+
+// Load saved theme
+applyDarkMode(localStorage.getItem("darkMode") === "true");
+
+// Toggle button
+darkToggle.onclick = () => {
+  const isDark = !document.body.classList.contains("dark");
+  localStorage.setItem("darkMode", isDark);
+  applyDarkMode(isDark);
+};
+
+  
 /* ----------------- HERO MESH (MATLAB-ISH) ----------------- */
 (function(){
   const canvas = document.getElementById('hero-canvas');
@@ -403,27 +477,6 @@ nav.scrolled{
   }
   draw();
 })();
-
-/* Mobile Menu Toggle */
-const toggle = document.querySelector(".nav-toggle");
-const links = document.querySelector(".nav-links");
-
-toggle.addEventListener("click", () => {
-  links.classList.toggle("open");
-});
-
-/* Close on outside click */
-document.addEventListener("click", (e) => {
-  if (!toggle.contains(e.target) && !links.contains(e.target)) {
-    links.classList.remove("open");
-  }
-});
-
-/* Scroll shadow */
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 30) document.querySelector("nav").classList.add("scrolled");
-  else document.querySelector("nav").classList.remove("scrolled");
-});
   
 </script>
 
