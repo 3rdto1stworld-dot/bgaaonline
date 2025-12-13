@@ -27,83 +27,64 @@
     <link rel="icon" type="image/png" href="assets/logo_black.png" />
 
 <style>
-	/* MOBILE NAV DROPDOWN FIX */
+	/* FORCE MOBILE MENU VISIBILITY (React-safe) */
 @media (max-width: 768px) {
-  nav ul,
-  .mobile-menu,
-  .hamburger-menu,
-  [role="menu"] {
-    background-color: #0f172a !important; /* deep slate/navy */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-    border-radius: 12px;
+  div[role="dialog"],
+  div[role="menu"],
+  nav div:has(button) + div {
+    background-color: #0b1220 !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45) !important;
+    border-radius: 14px;
     padding: 12px 0;
-    z-index: 9999;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 99999 !important;
   }
 
-  nav ul li a,
-  .mobile-menu a {
-    color: #f8fafc !important; /* near-white */
-    padding: 12px 20px;
+  div[role="menu"] a,
+  div[role="dialog"] a {
+    color: #f8fafc !important;
+    padding: 14px 22px;
     display: block;
     font-weight: 500;
   }
 
-  nav ul li a:hover {
+  div[role="menu"] a:hover {
     background: rgba(255, 255, 255, 0.08);
   }
 }
-
-	/* HERO MOBILE CONTAINMENT */
+/* HERO CONSTRAINT — WORKS WITH HASHED CLASSES */
 @media (max-width: 480px) {
-  .hero,
-  section.hero,
-  header.hero {
+  section,
+  header {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  .hero > div,
-  .hero-content {
+  section > div,
+  header > div {
     max-width: 420px;
-    margin: 0 auto;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .hero h1 {
-    font-size: 1.8rem;
-    line-height: 1.25;
+  h1 {
+    font-size: 1.7rem !important;
+    line-height: 1.25 !important;
   }
 
-  .hero p {
-    font-size: 1rem;
+  button,
+  a:has(button) {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
-  .hero .buttons,
-  .hero-actions {
-    display: flex;
-    flex-direction: column;
+  div:has(button) {
+    flex-direction: column !important;
     gap: 12px;
-    align-items: stretch;
-  }
-
-  .hero button,
-  .hero a.button {
-    width: 100%;
-    max-width: 100%;
-    padding: 14px;
-    font-size: 1rem;
   }
 }
 
-	.hero {
-  background: linear-gradient(
-    180deg,
-    rgba(15, 23, 42, 0.95),
-    rgba(15, 23, 42, 0.85)
-  );
-}
 
 </style>
 <script defer src="~flock.js" data-proxy-url="https://bgaaindex.lovable.app/~api/analytics"></script></head>
