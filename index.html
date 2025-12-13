@@ -27,7 +27,84 @@
     <link rel="icon" type="image/png" href="assets/logo_black.png" />
 
 <style>
-	
+	/* MOBILE NAV DROPDOWN FIX */
+@media (max-width: 768px) {
+  nav ul,
+  .mobile-menu,
+  .hamburger-menu,
+  [role="menu"] {
+    background-color: #0f172a !important; /* deep slate/navy */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    border-radius: 12px;
+    padding: 12px 0;
+    z-index: 9999;
+  }
+
+  nav ul li a,
+  .mobile-menu a {
+    color: #f8fafc !important; /* near-white */
+    padding: 12px 20px;
+    display: block;
+    font-weight: 500;
+  }
+
+  nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+	/* HERO MOBILE CONTAINMENT */
+@media (max-width: 480px) {
+  .hero,
+  section.hero,
+  header.hero {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero > div,
+  .hero-content {
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .buttons,
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .hero button,
+  .hero a.button {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+	.hero {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.95),
+    rgba(15, 23, 42, 0.85)
+  );
+}
+
 </style>
 <script defer src="~flock.js" data-proxy-url="https://bgaaindex.lovable.app/~api/analytics"></script></head>
 
