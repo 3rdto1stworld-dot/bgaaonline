@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-scrapbook-source="https://bgaalandingpage.lovable.app/" data-scrapbook-create="20251216124551013">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,468 +7,253 @@
     <meta name="description" content="BGAA Engineering makes creation accessible, effortless, and profitable. Engineering creativity for makers, designers, and innovators worldwide.">
     <meta name="author" content="BGAA Engineering">
     <meta name="keywords" content="engineering, creativity, manufacturing, CAD, 3D printing, prototyping, makers, design">
-    <link rel="canonical" href="https://bgaa.engineering/">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="BGAA Engineering | Democratizing Creativity">
-    <meta property="og:description" content="Accelerating creation, defying destruction. Make your ideas real.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="/og-image.png">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BGAA Engineering | Democratizing Creativity">
-    <meta name="twitter:description" content="Accelerating creation, defying destruction. Make your ideas real.">
-    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/96e1b69d-4d10-4848-85f0-de5e8adb3084/id-preview-3fad1b45--610087ff-ce56-4a11-bfbb-4c1a4cf12a85.lovable.app-1765873560536.png">
-    
-    <link rel="stylesheet" href="index-90O3RsQS.css">
-    <style>
-        /* Fixed mobile hamburger menu styles */
-        @media (max-width: 768px) {
-            /* Ensure mobile menu is properly positioned */
-            .mobile-menu-container {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--card-bg);
-                border-bottom: 1px solid var(--border-color);
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-                z-index: 1000;
-                overflow: hidden;
-                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                transform-origin: top;
-            }
-            
-            .mobile-menu-container.closed {
-                max-height: 0;
-                opacity: 0;
-                transform: scaleY(0);
-                visibility: hidden;
-            }
-            
-            .mobile-menu-container.open {
-                max-height: 500px;
-                opacity: 1;
-                transform: scaleY(1);
-                visibility: visible;
-            }
-            
-            /* Mobile menu links */
-            .mobile-menu-link {
-                display: block;
-                padding: 16px 24px;
-                font-size: 18px;
-                color: var(--foreground);
-                text-decoration: none;
-                transition: all 0.2s ease;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            }
-            
-            .mobile-menu-link:last-child {
-                border-bottom: none;
-            }
-            
-            .mobile-menu-link:hover {
-                background: rgba(0, 0, 0, 0.03);
-                color: var(--primary);
-                padding-left: 28px;
-            }
-            
-            /* Get Started button in mobile menu */
-            .mobile-get-started {
-                margin: 20px 24px;
-                display: block;
-                text-align: center;
-                padding: 14px;
-                background: var(--primary);
-                color: white;
-                border-radius: 10px;
-                font-weight: 600;
-                text-decoration: none;
-                transition: all 0.3s ease;
-            }
-            
-            .mobile-get-started:hover {
-                background: var(--primary-dark);
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            }
-            
-            /* Hamburger button improvements */
-            .hamburger-button {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 48px;
-                height: 48px;
-                border-radius: 8px;
-                background: transparent;
-                border: none;
-                cursor: pointer;
-                transition: all 0.3s ease;
-            }
-            
-            .hamburger-button:hover {
-                background: rgba(0, 0, 0, 0.05);
-            }
-            
-            .hamburger-button:active {
-                transform: scale(0.95);
-            }
-        }
-        
-        /* Adsterra banner styles */
-        .adsterra-banner {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 40px auto;
-            padding: 20px;
-            max-width: 728px;
-        }
-        
-        .adsterra-banner-inner {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 15px;
-            border: 1px solid #e9ecef;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        @media (max-width: 768px) {
-            .adsterra-banner {
-                margin: 30px auto;
-                padding: 15px;
-            }
-            
-            .adsterra-banner-inner {
-                padding: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="shortcut icon" href="assets/logo-black.png">
 </head>
-
 <body>
-    <div id="root">
-        <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
-            <ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <span class="logo-text">BGAA</span>
+                <span class="logo-dot">.</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="desktop-menu">
+                <a href="https://bgaaonline.lovable.app/shop" class="nav-link">Shop</a>
+                <a href="https://bgaaonline.lovable.app/cad-library" class="nav-link">CAD Library</a>
+                <a href="https://bgaaonline.lovable.app/tutorials" class="nav-link">Tutorials</a>
+                <a href="https://bgaaonline.lovable.app/manufacturing" class="nav-link">Manufacturing</a>
+                <a href="https://bgaaonline.lovable.app/auth" class="btn-primary nav-btn">Get Started</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false"></section>
         
-        <main class="min-h-screen bg-background">
-            <!-- Header with fixed mobile menu -->
-            <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-background/95 backdrop-blur-md shadow-md py-3">
-                <div class="container mx-auto px-6">
-                    <nav class="flex items-center justify-between">
-                        <a href="" class="font-display text-2xl font-bold tracking-wide transition-colors duration-300" style="color: hsl(var(--foreground));">
-                            BGAA<span class="text-primary">.</span>
-                        </a>
-                        
-                        <!-- Desktop Navigation -->
-                        <div class="hidden md:flex items-center gap-8">
-                            <a href="https://bgaaonline.lovable.app/shop" class="font-body font-medium transition-colors duration-300 relative group text-muted-foreground hover:text-primary">
-                                Shop
-                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
-                            </a>
-                            <a href="https://bgaaonline.lovable.app/cad-library" class="font-body font-medium transition-colors duration-300 relative group text-muted-foreground hover:text-primary">
-                                CAD Library
-                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
-                            </a>
-                            <a href="https://bgaaonline.lovable.app/tutorials" class="font-body font-medium transition-colors duration-300 relative group text-muted-foreground hover:text-primary">
-                                Tutorials
-                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
-                            </a>
-                            <a href="https://bgaaonline.lovable.app/manufacturing" class="font-body font-medium transition-colors duration-300 relative group text-muted-foreground hover:text-primary">
-                                Manufacturing
-                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
-                            </a>
-                        </div>
-                        
-                        <a href="https://bgaaonline.lovable.app/auth" class="hidden md:inline-flex items-center px-5 py-2.5 rounded-lg font-medium transition-all duration-300 bg-primary text-primary-foreground hover:bg-primary/90">
-                            Get Started
-                        </a>
-                        
-                        <!-- Mobile Hamburger Button -->
-                        <button class="hamburger-button md:hidden" aria-label="Toggle menu" style="color: hsl(var(--foreground));" id="mobileMenuButton">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6">
-                                <line x1="4" x2="20" y1="12" y2="12"></line>
-                                <line x1="4" x2="20" y1="6" y2="6"></line>
-                                <line x1="4" x2="20" y1="18" y2="18"></line>
-                            </svg>
-                        </button>
-                    </nav>
-                    
-                    <!-- Mobile Menu (Improved) -->
-                    <div class="mobile-menu-container closed" id="mobileMenu">
-                        <div class="container mx-auto px-6 py-4">
-                            <a href="https://bgaaonline.lovable.app/shop" class="mobile-menu-link">Shop</a>
-                            <a href="https://bgaaonline.lovable.app/cad-library" class="mobile-menu-link">CAD Library</a>
-                            <a href="https://bgaaonline.lovable.app/tutorials" class="mobile-menu-link">Tutorials</a>
-                            <a href="https://bgaaonline.lovable.app/manufacturing" class="mobile-menu-link">Manufacturing</a>
-                            <a href="https://bgaaonline.lovable.app/auth" class="mobile-get-started">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </header>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="https://bgaaonline.lovable.app/shop" class="mobile-nav-link">Shop</a>
+                <a href="https://bgaaonline.lovable.app/cad-library" class="mobile-nav-link">CAD Library</a>
+                <a href="https://bgaaonline.lovable.app/tutorials" class="mobile-nav-link">Tutorials</a>
+                <a href="https://bgaaonline.lovable.app/manufacturing" class="mobile-nav-link">Manufacturing</a>
+                <a href="https://bgaaonline.lovable.app/auth" class="mobile-nav-btn">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Democratizing<br>
+                    <span class="hero-italic">Creativity</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Accelerating creation, defying destruction. Make your ideas real.
+                </p>
+                <a href="https://bgaaonline.lovable.app/" class="btn-hero">
+                    Explore Now
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
             
-            <!-- Hero Section -->
-            <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('hero-workshop-C3mi_45n.jpg');"></div>
-                <div class="absolute inset-0" style="background: var(--hero-overlay);"></div>
-                <div class="relative z-10 container mx-auto px-4 sm:px-6 text-center pt-20 flex flex-col items-center justify-center">
-                    <h1 class="font-display text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 animate-fade-lift leading-tight" style="color: rgb(252, 250, 248);">
-                        Democratizing<br><span class="italic">Creativity</span>
-                    </h1>
-                    <p class="font-body text-base sm:text-xl md:text-2xl lg:text-3xl mb-8 sm:mb-12 max-w-3xl mx-auto animate-fade-lift delay-200 px-2" style="color: rgb(228, 221, 205); font-weight: 300; letter-spacing: 0.02em;">
-                        Accelerating creation, defying destruction.
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-number">+500</div>
+                    <div class="stat-text">Free CAD designs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+300</div>
+                    <div class="stat-text">Products with CAD attachment</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+50</div>
+                    <div class="stat-text">Tutorials</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <h2 class="section-title">Why We Exist</h2>
+            <div class="section-divider"></div>
+            
+            <div class="mission-content">
+                <p class="mission-text">
+                    Every person carries a universe of ideas. Some see a better chair. Others dream of machines that don't exist yet. A few imagine worlds that bend physics. These visions deserve to escape the confines of imagination and take physical form.
+                </p>
+                <p class="mission-text">
+                    But between the spark of an idea and the satisfaction of holding it in your hands lies a gap—filled with friction, complexity, and barriers that shouldn't exist. Tools that demand expertise before utility. Processes that punish the uninitiated. Systems designed for someone else.
+                </p>
+                <p class="mission-text highlight">
+                    BGAA exists to close that gap.
+                </p>
+                <p class="mission-text">
+                    We believe creation is not a privilege reserved for those with workshops, degrees, or capital. It's a human right—as fundamental as expression itself. Engineering isn't just problem-solving; it's a creative act. The circuit that lights up, the mechanism that clicks into place, the code that finally runs—these are moments of artistry.
+                </p>
+                <p class="mission-text">
+                    Our work is simple: remove the friction between what you imagine and what you can make real. Make creation accessible. Make it effortless. And yes—make it profitable, because creators deserve to thrive.
+                </p>
+                
+                <div class="mission-quote">
+                    <p>The distance between imagination and reality should be zero.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Start Creating</h2>
+            <p class="section-subtitle">Your gateway to making things real</p>
+            <div class="section-divider"></div>
+            
+            <div class="features-grid">
+                <a href="https://bgaaonline.lovable.app/shop" class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="feature-title">Shop</h3>
+                    <p class="feature-description">
+                        Tools, materials, and components curated for creators. Everything you need to bring ideas to life.
                     </p>
-                    <a href="https://bgaaonline.lovable.app/" class="btn-hero group animate-fade-lift delay-400">
-                        Explore
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 w-5 h-5 transition-transform group-hover:translate-x-1">
-                            <path d="M5 12h14"></path>
-                            <path d="m12 5 7 7-7 7"></path>
-                        </svg>
-                    </a>
-                </div>
-                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-float">
-                    <div class="w-6 h-10 border-2 border-primary-foreground/40 rounded-full flex justify-center pt-2">
-                        <div class="w-1.5 h-3 bg-primary-foreground/60 rounded-full animate-pulse"></div>
+                    <div class="feature-cta">
+                        Explore <i class="fas fa-arrow-right"></i>
                     </div>
-                </div>
-            </section>
-            
-            <!-- Why We Exist Section -->
-            <section class="py-24 md:py-32 bg-background">
-                <div class="container mx-auto px-6">
-                    <div class="max-w-4xl mx-auto">
-                        <div class="text-center mb-16">
-                            <h2 class="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-                                Why We Exist
-                            </h2>
-                            <div class="section-divider"></div>
-                        </div>
-                        <div class="space-y-8 font-body text-lg md:text-xl text-muted-foreground leading-relaxed">
-                            <p class="animate-fade-lift">Every person carries a universe of ideas. Some see a better chair. Others dream of machines that don't exist yet. A few imagine worlds that bend physics. These visions deserve to escape the confines of imagination and take physical form.</p>
-                            <p class="animate-fade-lift delay-100">But between the spark of an idea and the satisfaction of holding it in your hands lies a gap—filled with friction, complexity, and barriers that shouldn't exist. Tools that demand expertise before utility. Processes that punish the uninitiated. Systems designed for someone else.</p>
-                            <p class="animate-fade-lift delay-200 text-foreground font-medium">BGAA exists to close that gap.</p>
-                            <p class="animate-fade-lift delay-300">We believe creation is not a privilege reserved for those with workshops, degrees, or capital. It's a human right—as fundamental as expression itself. Engineering isn't just problem-solving; it's a creative act. The circuit that lights up, the mechanism that clicks into place, the code that finally runs—these are moments of artistry.</p>
-                            <p class="animate-fade-lift delay-400">Our work is simple: remove the friction between what you imagine and what you can make real. Make creation accessible. Make it effortless. And yes—make it profitable, because creators deserve to thrive.</p>
-                            <div class="pt-8 border-t border-border">
-                                <p class="text-center italic text-foreground font-display text-2xl animate-fade-lift delay-500">The distance between imagination and reality should be zero.</p>
-                            </div>
-                        </div>
+                </a>
+                
+                <a href="https://bgaaonline.lovable.app/cad-library" class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-box"></i>
                     </div>
+                    <h3 class="feature-title">CAD Library</h3>
+                    <p class="feature-description">
+                        Thousands of ready-to-use designs. Download, modify, manufacture. Skip the blank canvas.
+                    </p>
+                    <div class="feature-cta">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="https://bgaaonline.lovable.app/tutorials" class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="feature-title">Tutorials</h3>
+                    <p class="feature-description">
+                        Learn by making. Step-by-step guides from concept to completion, taught by practitioners.
+                    </p>
+                    <div class="feature-cta">
+                        Explore <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="process-visual">
+                <div class="process-step">
+                    <div class="process-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="process-line"></div>
                 </div>
-            </section>
-            
-            <!-- Adsterra Banner (300x250) - Added in a fitting place -->
-            <div class="adsterra-banner">
-                <div class="adsterra-banner-inner">
-                    <!-- Adsterra 300x250 Banner Code -->
-                    <div id="container-6fdab5fe0dce7395432fab4ddfc05781"></div>
+                <div class="process-step">
+                    <div class="process-line"></div>
+                    <div class="process-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="process-line"></div>
+                </div>
+                <div class="process-step">
+                    <div class="process-line"></div>
+                    <div class="process-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
                 </div>
             </div>
             
-            <!-- Start Creating Section -->
-            <section class="py-16 md:py-32 bg-secondary/30">
-                <div class="container mx-auto px-4 sm:px-6">
-                    <div class="text-center mb-12 md:mb-16">
-                        <h2 class="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">Start Creating</h2>
-                        <p class="font-body text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-2">Your gateway to making things real</p>
-                        <div class="section-divider mt-6"></div>
-                    </div>
-                    
-                    <div class="carousel-3d relative h-[350px] sm:h-[400px] md:h-[450px] max-w-5xl mx-auto">
-                        <div class="carousel-3d-container relative w-full h-full">
-                            <a href="https://bgaaonline.lovable.app/shop" class="carousel-3d-item w-[260px] sm:w-[300px] md:w-[400px] h-[280px] sm:h-[320px] md:h-[360px]" style="transform: translateX(-50%) translateZ(0px) rotateY(0deg) scale(1); opacity: 1; z-index: 30; filter: blur(0px); left: 50%;">
-                                <div class="card-elevated h-full flex flex-col items-center justify-center text-center p-4 sm:p-6 md:p-8 bg-card border border-border hover:border-accent/50 group">
-                                    <div class="mb-4 md:mb-6 p-3 md:p-4 rounded-full bg-primary/10 text-primary group-hover:bg-accent/20 group-hover:text-accent transition-colors duration-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag w-10 h-10">
-                                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
-                                            <path d="M3 6h18"></path>
-                                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                                        </svg>
-                                    </div>
-                                    <h3 class="font-display text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 md:mb-4">Shop</h3>
-                                    <p class="font-body text-sm sm:text-base text-muted-foreground leading-relaxed">Tools, materials, and components curated for creators. Everything you need to bring ideas to life.</p>
-                                    <div class="mt-4 md:mt-6 text-sm font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">Explore →</div>
-                                </div>
-                            </a>
-                            
-                            <a href="https://bgaaonline.lovable.app/cad-library" class="carousel-3d-item w-[260px] sm:w-[300px] md:w-[400px] h-[280px] sm:h-[320px] md:h-[360px]" style="transform: translateX(0%) translateZ(-150px) rotateY(-25deg) scale(0.85); opacity: 0.7; z-index: 20; filter: blur(2px); left: 65%;">
-                                <div class="card-elevated h-full flex flex-col items-center justify-center text-center p-4 sm:p-6 md:p-8 bg-card border border-border hover:border-accent/50 group">
-                                    <div class="mb-4 md:mb-6 p-3 md:p-4 rounded-full bg-primary/10 text-primary group-hover:bg-accent/20 group-hover:text-accent transition-colors duration-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-box w-10 h-10">
-                                            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
-                                            <path d="m3.3 7 8.7 5 8.7-5"></path>
-                                            <path d="M12 22V12"></path>
-                                        </svg>
-                                    </div>
-                                    <h3 class="font-display text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 md:mb-4">CAD Library</h3>
-                                    <p class="font-body text-sm sm:text-base text-muted-foreground leading-relaxed">Thousands of ready-to-use designs. Download, modify, manufacture. Skip the blank canvas.</p>
-                                    <div class="mt-4 md:mt-6 text-sm font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">Explore →</div>
-                                </div>
-                            </a>
-                            
-                            <a href="https://bgaaonline.lovable.app/tutorials" class="carousel-3d-item w-[260px] sm:w-[300px] md:w-[400px] h-[280px] sm:h-[320px] md:h-[360px]" style="transform: translateX(-100%) translateZ(-150px) rotateY(25deg) scale(0.85); opacity: 0.7; z-index: 20; filter: blur(2px); left: 35%;">
-                                <div class="card-elevated h-full flex flex-col items-center justify-center text-center p-4 sm:p-6 md:p-8 bg-card border border-border hover:border-accent/50 group">
-                                    <div class="mb-4 md:mb-6 p-3 md:p-4 rounded-full bg-primary/10 text-primary group-hover:bg-accent/20 group-hover:text-accent transition-colors duration-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open w-10 h-10">
-                                            <path d="M12 7v14"></path>
-                                            <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
-                                        </svg>
-                                    </div>
-                                    <h3 class="font-display text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 md:mb-4">Tutorials</h3>
-                                    <p class="font-body text-sm sm:text-base text-muted-foreground leading-relaxed">Learn by making. Step-by-step guides from concept to completion, taught by practitioners.</p>
-                                    <div class="mt-4 md:mt-6 text-sm font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">Explore →</div>
-                                </div>
-                            </a>
-                        </div>
-                        
-                        <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
-                            <button class="w-3 h-3 rounded-full transition-all duration-300 bg-primary scale-125" aria-label="Go to slide 1"></button>
-                            <button class="w-3 h-3 rounded-full transition-all duration-300 bg-muted-foreground/30 hover:bg-muted-foreground/50" aria-label="Go to slide 2"></button>
-                            <button class="w-3 h-3 rounded-full transition-all duration-300 bg-muted-foreground/30 hover:bg-muted-foreground/50" aria-label="Go to slide 3"></button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <h2 class="process-title">
+                <span class="process-label">concept</span>
+                <span class="process-arrow">→</span>
+                <span class="process-label">reality</span>
+            </h2>
             
-            <!-- Manufacturing Section -->
-            <section class="py-24 md:py-32 bg-background relative overflow-hidden">
-                <div class="absolute inset-0 opacity-[0.03]">
-                    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, hsl(var(--foreground)) 1px, transparent 0); background-size: 40px 40px;"></div>
-                </div>
-                
-                <div class="container mx-auto px-6 relative">
-                    <div class="max-w-5xl mx-auto">
-                        <div class="flex justify-center items-center gap-4 md:gap-8 mb-12">
-                            <div class="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent/10 text-accent animate-fade-lift">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb w-8 h-8 md:w-10 md:h-10">
-                                    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
-                                    <path d="M9 18h6"></path>
-                                    <path d="M10 22h4"></path>
-                                </svg>
-                            </div>
-                            
-                            <div class="flex-1 max-w-[200px] h-[2px] bg-gradient-to-r from-accent via-primary to-accent animate-fade-lift delay-100"></div>
-                            
-                            <div class="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/10 text-primary animate-fade-lift delay-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cog w-8 h-8 md:w-10 md:h-10">
-                                    <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"></path>
-                                    <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
-                                    <path d="M12 2v2"></path>
-                                    <path d="M12 22v-2"></path>
-                                    <path d="m17 20.66-1-1.73"></path>
-                                    <path d="M11 10.27 7 3.34"></path>
-                                    <path d="m20.66 17-1.73-1"></path>
-                                    <path d="m3.34 7 1.73 1"></path>
-                                    <path d="M14 12h8"></path>
-                                    <path d="M2 12h2"></path>
-                                    <path d="m20.66 7-1.73 1"></path>
-                                    <path d="m3.34 17 1.73-1"></path>
-                                    <path d="m17 3.34-1 1.73"></path>
-                                    <path d="m11 13.73-4 6.93"></path>
-                                </svg>
-                            </div>
-                            
-                            <div class="flex-1 max-w-[200px] h-[2px] bg-gradient-to-r from-accent via-primary to-accent animate-fade-lift delay-300"></div>
-                            
-                            <div class="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent/10 text-accent animate-fade-lift delay-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package w-8 h-8 md:w-10 md:h-10">
-                                    <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
-                                    <path d="M12 22V12"></path>
-                                    <path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"></path>
-                                    <path d="m7.5 4.27 9 5.15"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        
-                        <div class="text-center mb-12">
-                            <h2 class="font-display text-4xl md:text-6xl font-bold mb-4 animate-fade-lift">
-                                <span class="text-muted-foreground">concept</span>
-                                <span class="text-gradient mx-4">→</span>
-                                <span class="text-foreground">reality</span>
-                            </h2>
-                            <div class="section-divider mt-6"></div>
-                        </div>
-                        
-                        <div class="text-center max-w-3xl mx-auto mb-12">
-                            <p class="font-body text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-lift delay-200">
-                                Ideas are fragile. They live in sketches, in late-night notes, in the back of your mind. Manufacturing is the bridge that carries them from the possible to the present. We handle the complexity—prototyping, production, fulfillment—so you can focus on what matters:
-                                <span class="text-foreground font-medium"> making something real</span>.
-                            </p>
-                        </div>
-                        
-                        <div class="text-center animate-fade-lift delay-400">
-                            <a href="https://bgaaonline.lovable.app/manufacturing" class="btn-hero group inline-flex">
-                                Explore Manufacturing
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 w-5 h-5 transition-transform group-hover:translate-x-1">
-                                    <path d="M5 12h14"></path>
-                                    <path d="m12 5 7 7-7 7"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="container mx-auto px-6 mt-20">
-                    <div class="max-w-[728px] h-[90px] mx-auto bg-muted/30 rounded flex items-center justify-center text-muted-foreground/40 text-sm border border-border">
-                        <!-- Optional additional ad space -->
-                    </div>
-                </div>
-            </section>
+            <div class="section-divider"></div>
             
-            <!-- Footer -->
-            <footer class="bg-card border-t border-border">
-                <div class="container mx-auto px-6 py-12 md:py-16">
-                    <div class="max-w-4xl mx-auto">
-                        <div class="text-center mb-12">
-                            <p class="font-display text-xl md:text-2xl text-foreground italic mb-2">"Accelerating creation, defying destruction."</p>
-                            <p class="font-body text-muted-foreground">Engineering creativity, one maker at a time.</p>
-                        </div>
-                        
-                        <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12">
-                            <a href="https://bgaaonline.lovable.app/shop" class="font-body text-muted-foreground hover:text-primary transition-colors duration-300 relative group">
-                                Shop
-                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-                            </a>
-                            <a href="https://bgaaonline.lovable.app/cad-library" class="font-body text-muted-foreground hover:text-primary transition-colors duration-300 relative group">
-                                CAD Library
-                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-                            </a>
-                            <a href="https://bgaaonline.lovable.app/tutorials" class="font-body text-muted-foreground hover:text-primary transition-colors duration-300 relative group">
-                                Tutorials
-                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-                            </a>
-                            <a href="https://bgaaonline.lovable.app/manufacturing" class="font-body text-muted-foreground hover:text-primary transition-colors duration-300 relative group">
-                                Manufacturing
-                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-                            </a>
-                        </nav>
-                        
-                        <div class="flex justify-center mb-8">
-                            <div class="font-display text-2xl font-bold text-foreground tracking-wide">
-                                BGAA<span class="text-primary">.</span>
-                            </div>
-                        </div>
-                        
-                        <div class="text-center">
-                            <p class="font-body text-sm text-muted-foreground flex items-center justify-center gap-1">
-                                © 2025 BGAA Engineering. Made with
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart w-4 h-4 text-accent fill-accent">
-                                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
-                                </svg>
-                                for creators everywhere.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </main>
-    </div>
+            <div class="process-content">
+                <p class="process-text">
+                    Ideas are fragile. They live in sketches, in late-night notes, in the back of your mind. Manufacturing is the bridge that carries them from the possible to the present. We handle the complexity—prototyping, production, fulfillment—so you can focus on what matters: <span class="highlight">making something real</span>.
+                </p>
+                
+                <a href="https://bgaaonline.lovable.app/manufacturing" class="btn-hero">
+                    Explore Manufacturing
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Banner Section -->
+    <section class="ad-section">
+        <div class="container">
+            <div class="ad-banner">
+                <!-- Adsterra Banner Placeholder -->
+                <div id="container-6fdab5fe0dce7395432fab4ddfc05781" class="ad-container"></div>
+                <p class="ad-label">Advertisement</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-quote">
+                <p class="quote-text">"Accelerating creation, defying destruction."</p>
+                <p class="quote-subtext">Engineering creativity, one maker at a time.</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://bgaaonline.lovable.app/shop" class="footer-link">Shop</a>
+                <a href="https://bgaaonline.lovable.app/cad-library" class="footer-link">CAD Library</a>
+                <a href="https://bgaaonline.lovable.app/tutorials" class="footer-link">Tutorials</a>
+                <a href="https://bgaaonline.lovable.app/manufacturing" class="footer-link">Manufacturing</a>
+            </div>
+            
+            <div class="footer-logo">
+                <span class="logo-text">BGAA</span>
+                <span class="logo-dot">.</span>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>
+                    © 2025 BGAA Engineering. Made with 
+                    <i class="fas fa-heart"></i>
+                    for creators everywhere.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
     
     <!-- Adsterra Script -->
     <script type="text/javascript">
@@ -480,132 +265,6 @@
             'params' : {}
         };
         document.write('<scr' + 'ipt type="text/javascript" src="https://www.highperformanceformat.com/6fdab5fe0dce7395432fab4ddfc05781/invoke.js"></scr' + 'ipt>');
-    </script>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            /* =====================
-               FIXED HAMBURGER MENU
-            ===================== */
-            const mobileMenuButton = document.getElementById("mobileMenuButton");
-            const mobileMenu = document.getElementById("mobileMenu");
-            
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener("click", (e) => {
-                    e.stopPropagation();
-                    mobileMenu.classList.toggle("closed");
-                    mobileMenu.classList.toggle("open");
-                    
-                    // Update hamburger icon
-                    const icon = mobileMenuButton.querySelector('svg');
-                    if (mobileMenu.classList.contains("open")) {
-                        // Change to X icon
-                        icon.innerHTML = `
-                            <line x1="18" x2="6" y1="6" y2="18"></line>
-                            <line x1="6" x2="18" y1="6" y2="18"></line>
-                        `;
-                        mobileMenuButton.setAttribute("aria-label", "Close menu");
-                    } else {
-                        // Change back to hamburger icon
-                        icon.innerHTML = `
-                            <line x1="4" x2="20" y1="12" y2="12"></line>
-                            <line x1="4" x2="20" y1="6" y2="6"></line>
-                            <line x1="4" x2="20" y1="18" y2="18"></line>
-                        `;
-                        mobileMenuButton.setAttribute("aria-label", "Toggle menu");
-                    }
-                });
-                
-                // Close menu when clicking outside
-                document.addEventListener("click", (e) => {
-                    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                        mobileMenu.classList.add("closed");
-                        mobileMenu.classList.remove("open");
-                        const icon = mobileMenuButton.querySelector('svg');
-                        icon.innerHTML = `
-                            <line x1="4" x2="20" y1="12" y2="12"></line>
-                            <line x1="4" x2="20" y1="6" y2="6"></line>
-                            <line x1="4" x2="20" y1="18" y2="18"></line>
-                        `;
-                        mobileMenuButton.setAttribute("aria-label", "Toggle menu");
-                    }
-                });
-                
-                // Close menu when clicking on mobile menu links
-                const mobileLinks = mobileMenu.querySelectorAll("a");
-                mobileLinks.forEach(link => {
-                    link.addEventListener("click", () => {
-                        mobileMenu.classList.add("closed");
-                        mobileMenu.classList.remove("open");
-                        const icon = mobileMenuButton.querySelector('svg');
-                        icon.innerHTML = `
-                            <line x1="4" x2="20" y1="12" y2="12"></line>
-                            <line x1="4" x2="20" y1="6" y2="6"></line>
-                            <line x1="4" x2="20" y1="18" y2="18"></line>
-                        `;
-                        mobileMenuButton.setAttribute("aria-label", "Toggle menu");
-                    });
-                });
-            }
-            
-            /* =====================
-               3D CAROUSEL
-            ===================== */
-            const items = document.querySelectorAll(".carousel-3d-item");
-            const dots = document.querySelectorAll('[aria-label^="Go to slide"]');
-            let current = 0;
-            
-            function updateCarousel(index) {
-                items.forEach((item, i) => {
-                    const offset = i - index;
-                    
-                    if (offset === 0) {
-                        item.style.transform = "translateX(-50%) translateZ(0px) rotateY(0deg) scale(1)";
-                        item.style.opacity = "1";
-                        item.style.zIndex = "30";
-                        item.style.filter = "blur(0)";
-                        item.style.left = "50%";
-                    } else if (offset === -1 || offset === items.length - 1) {
-                        item.style.transform = "translateX(-100%) translateZ(-150px) rotateY(25deg) scale(0.85)";
-                        item.style.opacity = "0.7";
-                        item.style.zIndex = "20";
-                        item.style.filter = "blur(2px)";
-                        item.style.left = "35%";
-                    } else if (offset === 1 || offset === -(items.length - 1)) {
-                        item.style.transform = "translateX(0%) translateZ(-150px) rotateY(-25deg) scale(0.85)";
-                        item.style.opacity = "0.7";
-                        item.style.zIndex = "20";
-                        item.style.filter = "blur(2px)";
-                        item.style.left = "65%";
-                    } else {
-                        item.style.opacity = "0";
-                        item.style.zIndex = "10";
-                    }
-                });
-                
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle("bg-primary", i === index);
-                    dot.classList.toggle("scale-125", i === index);
-                    dot.classList.toggle("bg-muted-foreground/30", i !== index);
-                });
-            }
-            
-            if (items.length) {
-                updateCarousel(0);
-                
-                dots.forEach((dot, i) => {
-                    dot.addEventListener("click", () => {
-                        current = i;
-                        updateCarousel(current);
-                    });
-                });
-                
-                setInterval(() => {
-                    current = (current + 1) % items.length;
-                    updateCarousel(current);
-                }, 4000);
-            }
-        });
     </script>
 </body>
 </html>
