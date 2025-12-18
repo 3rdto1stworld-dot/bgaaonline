@@ -169,13 +169,56 @@ h1, h2, h3, h4 {
     align-items: center;
 }
 
-.logo-text {
-    color: var(--black);
+/* Logo styling */
+.logo-svg {
+    width: 150px; /* Adjust as needed */
+    height: auto;
+    max-width: 100%;
 }
 
-.logo-dot {
-    color: var(--deepseek-blue);
+/* Footer logo - white version */
+.footer-logo-svg {
+    width: 120px; /* Slightly smaller for footer */
+    height: auto;
+    max-width: 100%;
 }
+
+/* Remove old logo text styles if they exist */
+.logo-text,
+.logo-dot,
+.footer-logo .logo-text,
+.footer-logo .logo-dot {
+    display: none !important;
+}
+
+/* Ensure footer logo container is properly sized */
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo-svg {
+        width: 120px;
+    }
+    
+    .footer-logo-svg {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-svg {
+        width: 100px;
+    }
+    
+    .footer-logo-svg {
+        width: 80px;
+    }
+} 
 
 .desktop-menu {
     display: flex;
@@ -668,15 +711,6 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
-.footer-logo {
-    font-size: 2rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .footer-copyright {
     text-align: center;
