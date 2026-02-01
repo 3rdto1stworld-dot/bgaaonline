@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | BGAA Engineering</title>
+    <meta name="description" content="BGAA Engineering Terms: We curate open-source engineering resources to democratize creativity. Learn about our approach to CAD files, tutorials, and future manufacturing services.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --primary-dark: #084d94;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #111827;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --gray-light: #e5e7eb;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            padding-top: 80px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .legal-nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .legal-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .legal-link:hover {
+            color: var(--primary);
+        }
+
+        .legal-link.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        /* Header */
+        .legal-header {
+            text-align: center;
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+            margin-bottom: 40px;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .legal-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .legal-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Content */
+        .legal-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .legal-content {
+                padding: 30px 20px;
+            }
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .section-title {
+            color: var(--primary);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--secondary);
+        }
+
+        .highlight-box {
+            background-color: #f0f9ff;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .note-box {
+            background-color: #fffbeb;
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .note-box p {
+            margin: 0;
+            color: var(--dark);
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .definition {
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin: 15px 0;
+            border: 1px solid var(--gray-light);
+        }
+
+        .definition strong {
+            color: var(--primary);
+        }
+
+        .process-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 15px;
+            background-color: #f8fafc;
+            border-radius: var(--border-radius);
+            min-width: 150px;
+        }
+
+        .process-step i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .process-arrow {
+            color: var(--gray);
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        .legal-footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--gray);
+            border-top: 1px solid var(--gray-light);
+            margin-top: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .back-to-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .back-to-main:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="legal-nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-cogs logo-icon"></i>
+                <span>BGAA Engineering</span>
+            </a>
+            
+            <div class="legal-links">
+                <a href="terms.html" class="legal-link active">Terms</a>
+                <a href="refund.html" class="legal-link">Refund</a>
+                <a href="cookies.html" class="legal-link">Cookies</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="legal-header">
+        <div class="container">
+            <h1>Terms & Conditions</h1>
+            <p class="legal-subtitle">Democratizing Creativity Through Open-Source Engineering Resources</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="legal-content">
+            <!-- Introduction -->
+            <div class="section">
+                <div class="highlight-box">
+                    <p><i class="fas fa-bullhorn"></i> <strong>Our Mission:</strong> We exist to close the gap between imagination and reality. These terms support that mission while protecting our community.</p>
+                </div>
+                
+                <p>Welcome to BGAA Engineering ("we," "our," or "us"). We're not a typical engineering company—we're curators, facilitators, and enablers of creativity. Our platform systematically organizes open-source engineering resources to make physical creation accessible to everyone.</p>
+                
+                <p>By using our services, you're joining a community dedicated to democratizing engineering creativity. These terms explain how we operate and what we expect from our community members.</p>
+            </div>
+
+            <!-- Our Open-Source Philosophy -->
+            <div class="section">
+                <h2 class="section-title"><i class="fab fa-creative-commons"></i> 1. Our Open-Source Philosophy</h2>
+                
+                <div class="definition">
+                    <p><strong>Curated Open-Source:</strong> We don't create most content ourselves. We find, verify, organize, and present open-source engineering resources to make them practically useful.</p>
+                </div>
+                
+                <p><strong>What we provide:</strong></p>
+                <ul>
+                    <li><strong>CAD Library:</strong> STEP files curated from open-source projects worldwide</li>
+                    <li><strong>Tutorials:</strong> Collected and organized learning resources from the maker community</li>
+                    <li><strong>Product Directory:</strong> Links to third-party shops with engineering tools/materials</li>
+                    <li><strong>Future Manufacturing:</strong> Experimental systems we're building (currently in testing)</li>
+                </ul>
+                
+                <div class="note-box">
+                    <p><i class="fas fa-lightbulb"></i> <strong>Note:</strong> We attribute all open-source content to original creators when attribution information is available. If you're a creator and find your work here without proper attribution, please contact us immediately.</p>
+                </div>
+            </div>
+
+            <!-- CAD Library Specifics -->
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-cube"></i> 2. CAD Library Terms</h2>
+                
+                <div class="process-diagram">
+                    <div class="process-step">
+                        <i class="fas fa-search"></i>
+                        <p>Find Open-Source</p>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step">
+                        <i class="fas fa-filter"></i>
+                        <p>Curate & Verify</p>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step">
+                        <i class="fas fa-file-export"></i>
+                        <p>Provide as STEP</p>
+                    </div>
+                </div>
+                
+                <h3>2.1 File Format & Usage</h3>
+                <p>Our CAD library exclusively provides <strong>.STEP files</strong>—the universal format for 3D modeling interoperability. These files are:</p>
+                <ul>
+                    <li>Ready for integration into your CAD projects</li>
+                    <li>Modifiable in any major 3D modeling platform</li>
+                    <li>Intended as building blocks for your designs</li>
+                </ul>
+                
+                <h3>2.2 User Uploads</h3>
+                <p>We welcome community contributions! When you upload designs:</p>
+                <ul>
+                    <li>We review all submissions for safety and quality</li>
+                    <li>Approved designs receive a <strong>creator tag with your name</strong></li>
+                    <li>We may modify designs for standardization or improvement</li>
+                    <li>You retain your original rights but grant us curation rights</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <p><i class="fas fa-handshake"></i> <strong>Creator Promise:</strong> We will not use your designs for commercial profit without involving you in the process and benefits.</p>
+                </div>
+            </div>
+
+            <!-- Manufacturing Development -->
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-industry"></i> 3. Manufacturing System (In Development)</h2>
+                
+                <p>We're building something special—a manufacturing system that makes physical creation truly accessible. Important notes about our current phase:</p>
+                
+                <div class="note-box">
+                    <p><i class="fas fa-flask"></i> <strong>Experimental Phase:</strong> Our CNC machine with router/laser end-effectors and other rapid prototyping systems are currently in debugging and testing. We're engineers building engineering tools—perfection is our destination, but innovation is our continuous journey.</p>
+                </div>
+                
+                <h3>3.1 Realistic Expectations</h3>
+                <p>When our manufacturing service launches (coming soon), please understand:</p>
+                <ul>
+                    <li>We strive for excellence but acknowledge we're building complex systems</li>
+                    <li>Iteration and improvement are built into our DNA</li>
+                    <li>Early adopters help us refine and improve</li>
+                    <li>We're transparent about capabilities and limitations</li>
+                </ul>
+                
+                <h3>3.2 Future Service Terms</h3>
+                <p>When fully operational, our manufacturing service will:</p>
+                <ul>
+                    <li>Require design validation before production</li>
+                    <li>Provide material recommendations based on your design</li>
+                    <li>Offer transparent pricing based on complexity and materials</li>
+                    <li>Maintain quality standards appropriate for prototyping vs production</li>
+                </ul>
+            </div>
+
+            <!-- Shop & Third-Party Services -->
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-shopping-bag"></i> 4. Shop & Third-Party Services</h2>
+                
+                <p><strong>Current Reality:</strong> Our "shop" is a curated directory, not a direct store.</p>
+                
+                <div class="definition">
+                    <p><strong>How It Works:</strong> When you select a product, we redirect you to a third-party shop's WhatsApp for ordering. We're currently publicity partners helping quality engineering suppliers reach makers.</p>
+                </div>
+                
+                <h3>4.1 Important Disclaimers</h3>
+                <ul>
+                    <li><strong>We don't handle transactions</strong> – All purchases are directly with suppliers</li>
+                    <li><strong>We don't manage inventory</strong> – Stock availability is controlled by suppliers</li>
+                    <li><strong>We don't process refunds</strong> – See our separate Refund Policy for details</li>
+                    <li><strong>We curate, they deliver</strong> – We select quality suppliers, they fulfill orders</li>
+                </ul>
+                
+                <div class="note-box">
+                    <p><i class="fas fa-exclamation-triangle"></i> <strong>Supplier Relationships:</strong> We're selective about which suppliers we promote, but ultimately you're establishing a direct relationship with them when you purchase.</p>
+                </div>
+            </div>
+
+            <!-- Intellectual Property -->
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-brain"></i> 5. Intellectual Property & Creativity</h2>
+                
+                <div class="highlight-box">
+                    <p><i class="fas fa-users"></i> <strong>Community First:</strong> We believe ideas want to be free, but creators deserve credit. Our approach balances open sharing with proper attribution.</p>
+                </div>
+                
+                <h3>5.1 Curation vs Creation</h3>
+                <p>We make important distinctions:</p>
+                <ul>
+                    <li><strong>Curated Content:</strong> Open-source resources we organize – original licenses apply</li>
+                    <li><strong>Platform Content:</strong> Our organization system, tutorials structure, metadata – our IP</li>
+                    <li><strong>User Contributions:</strong> Designs you upload – you retain rights with curation grant</li>
+                    <li><strong>Manufacturing Process:</strong> Our methods and systems – our proprietary approach</li>
+                </ul>
+                
+                <h3>5.2 Attribution Promise</h3>
+                <p>We commit to:</p>
+                <ul>
+                    <li>Always attribute open-source creators when information is available</li>
+                    <li>Never claim others' work as our own</li>
+                    <li>Encourage derivative work with proper attribution chains</li>
+                    <li>Support the open-source ecosystem that enables us</li>
+                </ul>
+            </div>
+
+            <!-- General Terms -->
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-balance-scale"></i> 6. General Terms</h2>
+                
+                <h3>6.1 Acceptable Use</h3>
+                <p>Use our resources to:</p>
+                <ul>
+                    <li>Learn and develop engineering skills</li>
+                    <li>Build prototypes and products</li>
+                    <li>Collaborate with other makers</li>
+                    <li>Advance engineering knowledge</li>
+                </ul>
+                
+                <p>Don't use our resources to:</p>
+                <ul>
+                    <li>Create harmful or dangerous devices</li>
+                    <li>Infringe on others' intellectual property</li>
+                    <li>Spam or harass our community</li>
+                    <li>Circumvent our curation systems</li>
+                </ul>
+                
+                <h3>6.2 Changes to Terms</h3>
+                <p>We're building and evolving. These terms will evolve too. We'll:</p>
+                <ul>
+                    <li>Notify you of significant changes</li>
+                    <li>Provide a changelog of updates</li>
+                    <li>Keep historical versions available</li>
+                    <li>Apply changes prospectively, not retroactively</li>
+                </ul>
+                
+                <h3>6.3 Contact & Disputes</h3>
+                <p>We prefer collaboration over conflict. If issues arise:</p>
+                <ul>
+                    <li>Contact us first – we're reasonable engineers</li>
+                    <li>Provide specific examples and context</li>
+                    <li>Allow time for investigation and response</li>
+                    <li>Work toward constructive solutions</li>
+                </ul>
+            </div>
+
+            <!-- Final Note -->
+            <div class="section">
+                <div class="note-box">
+                    <p><i class="fas fa-cogs"></i> <strong>Engineering Mindset:</strong> These terms, like our systems, will evolve. We're building in the open, learning as we go, and committed to making creation accessible. If something doesn't make sense or seems counter to our mission, tell us. We're engineers—we fix things.</p>
+                </div>
+                
+                <p><strong>Effective Date:</strong> These terms are effective as of our continuous deployment. We don't have version numbers—we have iterations.</p>
+                
+                <p><strong>Last Updated:</strong> We update when we improve. Check back occasionally.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="legal-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="terms.html" class="legal-link active">Terms & Conditions</a>
+                <a href="refund.html" class="legal-link">Refund Policy</a>
+                <a href="cookies.html" class="legal-link">Cookies & Privacy</a>
+            </div>
+            
+            <p>BGAA Engineering – Democratizing Creativity Through Open Engineering</p>
+            <p>Engineering creativity for makers, designers, and innovators worldwide.</p>
+            
+            <a href="/" class="back-to-main">
+                <i class="fas fa-arrow-left"></i>
+                Back to Main Site
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Simple active link highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const links = document.querySelectorAll('.legal-link');
+            
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
