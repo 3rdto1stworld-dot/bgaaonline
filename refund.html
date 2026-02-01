@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy | BGAA Engineering</title>
+    <meta name="description" content="BGAA Engineering Refund Policy: Understand our third-party shop model and how we're building transparent manufacturing systems for creators.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --primary-dark: #084d94;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #111827;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --gray-light: #e5e7eb;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            padding-top: 80px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .legal-nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .legal-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .legal-link:hover {
+            color: var(--primary);
+        }
+
+        .legal-link.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        /* Header */
+        .legal-header {
+            text-align: center;
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, #fff7ed 0%, #fffbeb 100%);
+            margin-bottom: 40px;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .legal-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .legal-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Content */
+        .legal-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .legal-content {
+                padding: 30px 20px;
+            }
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .section-title {
+            color: var(--primary);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--accent);
+        }
+
+        .warning-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .warning-box p {
+            margin: 0;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .info-box {
+            background-color: #f0f9ff;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: var(--dark);
+        }
+
+        .process-box {
+            background-color: #f8fafc;
+            border: 2px dashed var(--gray-light);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: var(--border-radius);
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .process-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-number {
+            background-color: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .model-diagram {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: center;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .model-diagram {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+            }
+        }
+
+        .model-box {
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background-color: #f8fafc;
+            border: 1px solid var(--gray-light);
+        }
+
+        .model-box h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .model-arrow {
+            font-size: 2rem;
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .model-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* Footer */
+        .legal-footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--gray);
+            border-top: 1px solid var(--gray-light);
+            margin-top: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .back-to-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .back-to-main:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="legal-nav">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-cogs logo-icon"></i>
+                <span>BGAA Engineering</span>
+            </a>
+            
+            <div class="legal-links">
+                <a href="terms.html" class="legal-link">Terms</a>
+                <a href="refund.html" class="legal-link active">Refund</a>
+                <a href="cookies.html" class="legal-link">Cookies</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="legal-header">
+        <div class="container">
+            <h1>Refund & Resolution Policy</h1>
+            <p class="legal-subtitle">Transparent handling of issues in our curated engineering ecosystem</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="legal-content">
+            <!-- Important Notice -->
+            <div class="section">
+                <div class="warning-box">
+                    <p><i class="fas fa-exclamation-circle"></i> <strong>Critical Understanding:</strong> BGAA Engineering currently operates as a curator and directory service. We do not process transactions directly.</p>
+                </div>
+                
+                <p>This policy explains how refunds and issues are handled in our unique ecosystem. We're building toward direct manufacturing services, but currently function as a bridge between creators and quality suppliers.</p>
+            </div>
+
+            <!-- Current Shop Model -->
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-store"></i> 1. Our Current Shop Model</h2>
+                
+                <div class="model-diagram">
+                    <div class="model-box">
+                        <h4>You (Creator)</h4>
+                        <p>Browse our curated selection</p>
+                    </div>
+                    <div class="model-arrow">→</div>
+                    <div class="model-box">
+                        <h4>BGAA</h4>
+                        <p>Connect via WhatsApp</p>
+                    </div>
+                    <div class="model-arrow">→</div>
+                    <div class="model-box">
+                        <h4>Third-Party Shop</h4>
+                        <p>Process & fulfill order</p>
+                    </div>
+                </div>
+                
+                <h3>1.1 How It Actually Works</h3>
+                <p>When you "purchase" through BGAA:</p>
+                <ul>
+                    <li>You're redirected to a supplier's WhatsApp</li>
+                    <li>All communication happens directly with them</li>
+                    <li>They set prices, terms, and shipping</li>
+                    <li>They process payments and handle fulfillment</li>
+                    <li><strong>We're publicity partners, not retailers</strong></li>
+                </ul>
+                
+                <div class="info-box">
+                    <p><i class="fas fa-handshake"></i> <strong>Our Role:</strong> We vet suppliers for quality and reliability, then connect you directly. We're matchmakers for engineering resources.</p>
+                </div>
+            </div>
+
+            <!-- Refund Responsibilities -->
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-exchange-alt"></i> 2. Refund Responsibilities</h2>
+                
+                <div class="process-box">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h4>Contact the Supplier First</h4>
+                            <p>All refund requests must go directly to the supplier you purchased from. They control inventory, pricing, and fulfillment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h4>If Supplier Doesn't Respond</h4>
+                            <p>Contact us with proof of purchase and communication attempts. We'll mediate as your connection point.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h4>Our Mediation Process</h4>
+                            <p>We'll contact the supplier on your behalf and work toward resolution. This may include removing them from our directory if they're unresponsive.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>2.1 What We Can't Do</h3>
+                <ul>
+                    <li><strong>Process refunds directly</strong> – We don't handle your money</li>
+                    <li><strong>Guarantee supplier actions</strong> – We curate, don't control</li>
+                    <li><strong>Store inventory</strong> – We don't have warehouses</li>
+                    <li><strong>Handle shipping issues</strong> – That's between you and the supplier</li>
+                </ul>
+                
+                <h3>2.2 What We Can Do</h3>
+                <ul>
+                    <li><strong>Mediate disputes</strong> – We know these suppliers</li>
+                    <li><strong>Remove problematic suppliers</strong> – Quality control is ongoing</li>
+                    <li><strong>Provide documentation</strong> – Screenshots, chat logs help</li>
+                    <li><strong>Escalate appropriately</strong> – We'll help find solutions</li>
+                </ul>
+            </div>
+
+            <!-- Digital Resources Policy -->
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-file-download"></i> 3. Digital Resources Policy</h2>
+                
+                <p>Our CAD library and tutorials are free open-source resources. However:</p>
+                
+                <h3>3.1 CAD File Issues</h3>
+                <p>If you encounter problems with our curated .STEP files:</p>
+                <ul>
+                    <li><strong>Report technical issues</strong> – We'll investigate and fix if possible</li>
+                    <li><strong>Check original source</strong> – Some issues originate upstream</li>
+                    <li><strong>Use community forums</strong> – Other makers might have solutions</li>
+                    <li><strong>No "refunds" for free files</strong> – But we'll improve our curation</li>
+                </ul>
+                
+                <h3>3.2 Tutorial Problems</h3>
+                <p>Our tutorials are collected from open sources. If you find:</p>
+                <ul>
+                    <li><strong>Outdated information</strong> – Engineering evolves rapidly</li>
+                    <li><strong>Broken links</strong> – External sources change</li>
+                    <li><strong>Incomplete instructions</strong> – Report for community improvement</li>
+                </ul>
+                
+                <div class="info-box">
+                    <p><i class="fas fa-users"></i> <strong>Community Approach:</strong> We fix digital resource issues by improving our curation systems, not processing "returns" on free content.</p>
+                </div>
+            </div>
+
+            <!-- Future Manufacturing Services -->
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-industry"></i> 4. Future Manufacturing Services</h2>
+                
+                <div class="warning-box">
+                    <p><i class="fas fa-tools"></i> <strong>Under Construction:</strong> Our CNC/laser manufacturing system is in testing. This section outlines our planned approach when operational.</p>
+                </div>
+                
+                <h3>4.1 Planned Refund Categories</h3>
+                <p>When our manufacturing service launches:</p>
+                <ul>
+                    <li><strong>Design validation failures</strong> – Files we can't process</li>
+                    <li><strong>Machine errors</strong> – Our equipment failures</li>
+                    <li><strong>Material defects</strong> – Problems with our stock</li>
+                    <li><strong>Shipping damage</strong> – When we control logistics</li>
+                </ul>
+                
+                <h3>4.2 Not Covered (Planned)</h3>
+                <p>Even with direct control, some things won't be refundable:</p>
+                <ul>
+                    <li><strong>Design flaws in your CAD files</strong> – Garbage in, garbage out</li>
+                    <li><strong>Material choice errors</strong> – You select, we fabricate</li>
+                    <li><strong>"Changed my mind" after production starts</strong> – Materials get committed</li>
+                    <li><strong>Cosmetic variations</strong> – Normal manufacturing tolerances</li>
+                </ul>
+                
+                <h3>4.3 Our Engineering Philosophy</h3>
+                <p>We're building systems with transparency:</p>
+                <ul>
+                    <li><strong>Preview before cutting</strong> – Virtual simulations where possible</li>
+                    <li><strong>Clear tolerances</strong> – CNC/laser capabilities documented</li>
+                    <li><strong>Material samples</strong> – Physical references available</li>
+                    <li><strong>Iterative approach</strong> – Test cuts for complex projects</li>
+                </ul>
+            </div>
+
+            <!-- Problem Resolution Process -->
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-cogs"></i> 5. Problem Resolution Process</h2>
+                
+                <div class="process-box">
+                    <h3>Our Step-by-Step Approach</h3>
+                    
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h4>Direct Contact First</h4>
+                            <p>Always contact the supplier directly with order details, photos, and clear descriptions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h4>Allow Reasonable Time</h4>
+                            <p>Suppliers need time to investigate. 2-3 business days is reasonable for initial response.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h4>Contact Us with Evidence</h4>
+                            <p>If no resolution, contact us with:
+                                <ul>
+                                    <li>Order details and dates</li>
+                                    <li>Supplier communication screenshots</li>
+                                    <li>Photos of issues (if physical products)</li>
+                                    <li>Clear explanation of desired outcome</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h4>Our Investigation</h4>
+                            <p>We'll review patterns with the supplier, check our vetting notes, and work toward fair solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>5.1 What Makes Resolution Successful</h3>
+                <ul>
+                    <li><strong>Clear communication</strong> – Specifics help everyone</li>
+                    <li><strong>Reasonable expectations</strong> – Engineering has tolerances</li>
+                    <li><strong>Documentation</strong> – Photos, chats, order numbers</li>
+                    <li><strong>Patience</strong> – Good solutions take time</li>
+                </ul>
+            </div>
+
+            <!-- Contact & Timing -->
+            <div class="section">
+                <h2 class="section-title"><i class="fas fa-clock"></i> 6. Timing & Contact</h2>
+                
+                <h3>6.1 Response Times</h3>
+                <p>Realistic expectations:</p>
+                <ul>
+                    <li><strong>Supplier response</strong>: 1-3 business days (they're small businesses)</li>
+                    <li><strong>Our mediation</strong>: 2-5 business days for investigation</li>
+                    <li><strong>Complex cases</strong>: Up to 10 business days for full resolution</li>
+                </ul>
+                
+                <h3>6.2 Best Ways to Contact</h3>
+                <p>For fastest resolution:</p>
+                <ul>
+                    <li><strong>Supplier first</strong>: Use the WhatsApp we connected you with</li>
+                    <li><strong>For mediation</strong>: Email with "REFUND MEDIATION" in subject</li>
+                    <li><strong>Include everything</strong>: One complete email beats multiple messages</li>
+                </ul>
+                
+                <div class="info-box">
+                    <p><i class="fas fa-hard-hat"></i> <strong>Engineering Mindset:</strong> We approach problems like engineers: diagnose, understand root causes, implement solutions, improve systems. We're building better processes as we grow.</p>
+                </div>
+                
+                <p><strong>Note:</strong> This policy evolves as we transition from curation to direct manufacturing. Check back as we build our CNC/laser systems and take more direct responsibility.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="legal-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="terms.html" class="legal-link">Terms & Conditions</a>
+                <a href="refund.html" class="legal-link active">Refund Policy</a>
+                <a href="cookies.html" class="legal-link">Cookies & Privacy</a>
+            </div>
+            
+            <p>BGAA Engineering – Building Transparent Systems for Creators</p>
+            <p>Democratizing creativity means clear processes, not hidden terms.</p>
+            
+            <a href="/" class="back-to-main">
+                <i class="fas fa-arrow-left"></i>
+                Back to Main Site
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Simple active link highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const links = document.querySelectorAll('.legal-link');
+            
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
