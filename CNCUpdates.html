@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGA CNC Project | Transparent Build Updates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fb;
+            color: #1a2a3a;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* header */
+        .project-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .project-badge {
+            display: inline-block;
+            background: #e6f7e6;
+            color: #2c6e2c;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: #0a2b3e;
+        }
+
+        .subhead {
+            font-size: 1.2rem;
+            color: #4a627a;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .campaign-link {
+            margin-top: 1rem;
+        }
+
+        .campaign-link a {
+            color: #1e6f5c;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #1e6f5c;
+        }
+
+        /* progress summary cards */
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            text-align: center;
+            flex: 1;
+            min-width: 160px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e9edf2;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e6f5c;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #5b6f82;
+            margin-top: 0.5rem;
+        }
+
+        /* update log */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.5rem 0;
+            border-left: 5px solid #1e6f5c;
+            padding-left: 1rem;
+        }
+
+        .updates-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .update-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+            border: 1px solid #eef2f7;
+        }
+
+        .update-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .update-img {
+            width: 100%;
+            max-height: 480px;
+            object-fit: cover;
+            background: #eef2f7;
+            display: block;
+        }
+
+        .update-content {
+            padding: 1.8rem;
+        }
+
+        .update-date {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1e6f5c;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .update-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .update-text {
+            color: #2d3e50;
+            margin-bottom: 1rem;
+        }
+
+        .milestone-badge {
+            display: inline-block;
+            background: #eef2fa;
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 0.75rem;
+        }
+
+        /* placeholder for future uploads */
+        .coming-soon {
+            text-align: center;
+            background: #f8fafd;
+            border-radius: 28px;
+            padding: 3rem;
+            border: 1px dashed #cbd5e1;
+            margin-top: 1rem;
+        }
+
+        .footer-note {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #e2e8f0;
+            color: #5b6f82;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 680px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .update-title {
+                font-size: 1.3rem;
+            }
+            .update-content {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="project-header">
+        <div class="project-badge">🔧 FULL TRANSPARENCY · SPONSOR UPDATES</div>
+        <h1>BGA Multi‑Tool CNC Machine</h1>
+        <p class="subhead">Engineering final year project — building an open, accessible CNC platform to democratize manufacturing.</p>
+        <div class="campaign-link">
+            📍 <a href="https://www.oncrowdr.com/explore/c/help-me-build-a-multi-tool-cnc-machine-for-my-engineering-final-year-project" target="_blank" rel="noopener noreferrer">View original campaign & sponsor this project</a>
+        </div>
+    </div>
+
+    <!-- live progress snapshot -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">🔧 42%</div>
+            <div class="stat-label">Mechanical assembly</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">⚡ 25%</div>
+            <div class="stat-label">Electronics & wiring</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">📸 12</div>
+            <div class="stat-label">Progress updates</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">🎯 Q2 2026</div>
+            <div class="stat-label">Target completion</div>
+        </div>
+    </div>
+
+    <!-- main updates section (you will add new photos & notes here) -->
+    <div class="section-title">📸 Project diary — visual & technical logs</div>
+    <div class="updates-grid" id="updatesContainer">
+        <!-- Update 1: Frame assembly -->
+        <div class="update-card">
+            <img class="update-img" src="https://placehold.co/1200x800/eef2f7/5b6f82?text=Frame+Assembly+Progress" alt="CNC frame assembly - March 2026" onerror="this.src='https://placehold.co/1200x800/eef2f7/5b6f82?text=Image+Placeholder+(Upload+actual+photo)'">
+            <div class="update-content">
+                <div class="update-date">📅 MARCH 20, 2026</div>
+                <div class="update-title">Steel frame & linear rails mounted</div>
+                <div class="update-text">
+                    The main chassis is now complete! We used 40x80mm aluminum extrusion for rigidity. 
+                    Linear rails are aligned within 0.05mm tolerance. Next: installing NEMA 23 stepper motors and ball screws.
+                    Special thanks to sponsors who made the heavy-duty profile possible.
+                </div>
+                <div class="milestone-badge">✅ Milestone: mechanical foundation</div>
+            </div>
+        </div>
+
+        <!-- Update 2: electronics mockup / placeholder -->
+        <div class="update-card">
+            <img class="update-img" src="https://placehold.co/1200x800/eef2f7/5b6f82?text=Electronics+Setup+WIP" alt="Electronics enclosure and wiring">
+            <div class="update-content">
+                <div class="update-date">📅 APRIL 2, 2026</div>
+                <div class="update-title">Controller & wiring layout</div>
+                <div class="update-text">
+                    Arduino + CNC shield v3 assembled, and we're testing GRBL firmware. 
+                    Emergency stop and limit switches have been integrated for safety. 
+                    Wiring loom is organized — all connections labeled for easier troubleshooting.
+                </div>
+                <div class="milestone-badge">⚙️ Electronics in progress</div>
+            </div>
+        </div>
+
+        <!-- ADD NEW UPDATES BELOW THIS LINE -->
+        <!-- 
+            ******************************************
+            HOW TO ADD NEW PROGRESS PHOTOS & UPDATES:
+            ******************************************
+            1. Duplicate the entire <div class="update-card"> block above.
+            2. Replace the placeholder image URL with your actual photo path.
+               - If you upload images in the same folder, use: "images/photo1.jpg"
+               - Or use full image hosting link.
+            3. Change date, title, description, and milestone badge text.
+            4. Keep transparency: share both successes and challenges.
+        -->
+
+        <!-- Example template for future update (uncomment and copy as needed) 
+        <div class="update-card">
+            <img class="update-img" src="your-actual-photo.jpg" alt="Descriptive text">
+            <div class="update-content">
+                <div class="update-date">📅 MONTH DAY, YEAR</div>
+                <div class="update-title">Short headline of what was done</div>
+                <div class="update-text">
+                    Detailed explanation: materials used, test results, next steps.
+                    Sponsors appreciate technical details and honesty about hurdles.
+                </div>
+                <div class="milestone-badge">🏁 Milestone name</div>
+            </div>
+        </div>
+        -->
+    </div>
+
+    <!-- transparency commitment & financial summary -->
+    <div class="section-title">📋 Transparency log</div>
+    <div class="update-card" style="background: #fefce8; border-left: 4px solid #eab308;">
+        <div class="update-content">
+            <div class="update-title">How every contribution is used</div>
+            <div class="update-text">
+                <strong>✅ Funds allocation (real-time tracking):</strong><br>
+                • 44% — Mechanical parts (linear rails, ball screws, aluminum profiles, stepper mounts)<br>
+                • 28% — Electronics (controller, stepper drivers, power supply, wiring)<br>
+                • 18% — Spindle & tooling (router, end mills, collets)<br>
+                • 10% — Contingency & shipping<br><br>
+                Every major purchase is documented with receipts. If you're a sponsor and need specific details, 
+                contact me via campaign messages — I'll reply within 24h.
+            </div>
+            <div class="milestone-badge">🔍 Full accountability — ask anything</div>
+        </div>
+    </div>
+
+    <!-- next steps + call to action -->
+    <div class="coming-soon">
+        <h3 style="margin-bottom: 0.5rem;">🚀 What’s next?</h3>
+        <p style="margin-bottom: 1rem;">Next update: first motion test (axis movement) + spindle calibration video. <br>Sponsors will get early access to design files and test results.</p>
+        <a href="https://www.oncrowdr.com/explore/c/help-me-build-a-multi-tool-cnc-machine-for-my-engineering-final-year-project" target="_blank" style="background: #1e6f5c; color: white; padding: 0.6rem 1.6rem; border-radius: 40px; text-decoration: none; font-weight: 500; display: inline-block;">🔗 Support the project →</a>
+    </div>
+
+    <div class="footer-note">
+        ⚙️ BGA CNC Project — building with transparency. Every sponsor gets direct insight into the engineering journey.<br>
+        Last updated: April 2026 | Next update: after motor tuning & first cut test
+    </div>
+</div>
+</body>
+</html>
